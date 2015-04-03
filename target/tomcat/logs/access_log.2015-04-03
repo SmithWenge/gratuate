@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:09 +0800] "GET /graduate/ HTTP/1.1" 200 13531 http-bio-8080-exec-1 1542
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:10 +0800] "GET /graduate/resource/new_define.css HTTP/1.1" 200 3153 http-bio-8080-exec-2 228
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:10 +0800] "GET /graduate/resource/jquery-2.1.0.js HTTP/1.1" 200 244963 http-bio-8080-exec-3 206
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:10 +0800] "GET /graduate/resource/pic.png HTTP/1.1" 200 28812 http-bio-8080-exec-6 188
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:10 +0800] "GET /graduate/resource/bg.jpg HTTP/1.1" 200 64517 http-bio-8080-exec-4 190
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:22:21 +0800] "GET /graduate/code.action;jsessionid=27CD8FC1A6CF34B28BFF5BFD3D33048B HTTP/1.1" 200 1872 http-bio-8080-exec-5 10506
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:24:39 +0800] "GET /graduate/ HTTP/1.1" 200 13443 http-bio-8080-exec-10 1699
+0:0:0:0:0:0:0:1 - - [03/Apr/2015:19:24:39 +0800] "GET /graduate/code.action HTTP/1.1" 200 1879 http-bio-8080-exec-10 7

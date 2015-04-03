@@ -16,15 +16,15 @@ public class AdminLoginServiceImpl implements AdminLoginService {
 	private AdminLoginDaoImpl impl;
 
 	public Admin loginAdmin(Admin admin) {
-		if(admin != null){
+		if (admin != null) {
 			impl.login(admin);
 		}
 		return null;
 	}
-	
+
 	public List<Log> queryLog(Admin admin) {
 		if(impl.login(admin) != null){
-			return impl.query4Log();
+			impl.query4Log();
 		}
 		return null;
 	}

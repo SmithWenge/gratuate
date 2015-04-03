@@ -486,9 +486,9 @@
 					</table>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
- -->
+
 	<div class="footer">
 		<div class="footerinside">
 			<p class="footer-p">版权所有 ©2006 - 2015 大连交通大学 | 辽ICP备 05001355号</p>
