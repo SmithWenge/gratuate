@@ -209,13 +209,17 @@ public class JDBCTemplate<T> {
 		
 		buffer.append(" ORDER BY ").append(page.getOrderBy()).append(" LIMIT ").append(startCursor).append(", ").append(endCursor);
 		page.setResult(query(buffer.toString(), mapper, num));
+		page.getResult();
 	}
 	
 	public int query4TotalCount(String sql) {
 		int tmp = 0;
 		try {
 			if (null == conn || conn.isClosed()) 
-				conn = dataSource.getConnection();
+			if(null != dataSource){
+				System.out.println(dataSource +"----- not null");
+			}
+			conn = dataSource.getConnection();
 			StringBuffer buffer = new StringBuffer("SELECT count(1) as count FROM (");
 			buffer.append(sql).append(" ) AS T1");
 			stmt = conn.createStatement();

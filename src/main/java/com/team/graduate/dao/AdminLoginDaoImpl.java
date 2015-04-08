@@ -2,7 +2,6 @@ package com.team.graduate.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -35,10 +34,10 @@ public class AdminLoginDaoImpl {
 		}
 	}
 
-	public List<Log> query4Log() {
-		String sql = "SELECT logId, createDate, thread, `level`, class, message FROM stu_graduate_log4j";
-		return jdbcTemplate.query(sql, new LogRowMapper());
-	}
+//	public List<Log> query4Log() {
+//		String sql = "SELECT logId, createDate, thread, `level`, class, message FROM stu_graduate_log4j";
+//		return jdbcTemplate.query(sql, new LogRowMapper());
+//	}
 
 	public static void read4Page(Page<Log> page) {
 		String sql = "SELECT logId, createDate, thread, `level`, class, message FROM stu_graduate_log4j";
@@ -54,17 +53,17 @@ public class AdminLoginDaoImpl {
 		}
 	}
 
-	private class LogRowMapper implements RowMapper<Log> {
-
-		public Log mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Log log = new Log();
-			log.setLogId(rs.getInt("logId"));
-			log.setClazz(rs.getString("class"));
-			log.setCreateDate(rs.getDate("createDate"));
-			log.setLevel(rs.getString("level"));
-			log.setMessage(rs.getString("message"));
-			log.setThread(rs.getString("thread"));
-			return log;
-		}
-	}
+//	private class LogRowMapper implements RowMapper<Log> {
+//
+//		public Log mapRow(ResultSet rs, int rowNum) throws SQLException {
+//			Log log = new Log();
+//			log.setLogId(rs.getInt("logId"));
+//			log.setClazz(rs.getString("class"));
+//			log.setCreateDate(rs.getDate("createDate"));
+//			log.setLevel(rs.getString("level"));
+//			log.setMessage(rs.getString("message"));
+//			log.setThread(rs.getString("thread"));
+//			return log;
+//		}
+//	}
 }

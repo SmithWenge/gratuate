@@ -9,6 +9,7 @@ import com.team.graduate.common.jdbc.JDBCTemplate;
 import com.team.graduate.model.StuGraduateInfo;
 
 public class ExcelInputDao {
+	@SuppressWarnings("rawtypes")
 	private static JDBCTemplate<Dictionary> util = new JDBCTemplate<Dictionary>();
 	static {
 		util.setDataSource(DruidConnUtil.getDataSource());

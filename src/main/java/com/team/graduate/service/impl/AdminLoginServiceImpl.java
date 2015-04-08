@@ -1,13 +1,12 @@
 package com.team.graduate.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.team.graduate.dao.AdminLoginDaoImpl;
 import com.team.graduate.model.Admin;
 import com.team.graduate.model.Log;
+import com.team.graduate.model.Page;
 import com.team.graduate.service.AdminLoginService;
 
 @Service
@@ -22,9 +21,9 @@ public class AdminLoginServiceImpl implements AdminLoginService {
 		return null;
 	}
 
-	public List<Log> queryLog(Admin admin) {
+	public Page<Log> queryLog(Admin admin, Page<Log> page) {
 		if(impl.login(admin) != null){
-			impl.query4Log();
+			AdminLoginDaoImpl.read4Page(page);
 		}
 		return null;
 	}

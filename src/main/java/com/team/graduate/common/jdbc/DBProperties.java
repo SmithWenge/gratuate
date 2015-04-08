@@ -10,8 +10,9 @@ public class DBProperties {
 		Properties properties = new Properties();
 		InputStream propertiesStream = null;
 		try {
-			propertiesStream = DBProperties.class.getResourceAsStream("/application/db.properties");
+			propertiesStream = DBProperties.class.getResourceAsStream("/db/db.properties");
 			properties.load(propertiesStream);
+			System.out.println(properties);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

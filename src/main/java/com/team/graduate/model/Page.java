@@ -3,9 +3,10 @@ package com.team.graduate.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Page<T> {
 	private int totalCount = 0;
-	private int pageSize = 5;
+	private int pageSize = 3;
 	private int totalPage = 1;
 	private int pageNum = 0;
 	private String orderBy;

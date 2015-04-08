@@ -53,4 +53,15 @@
 		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<display-name>FileDownload</display-name>
+		<servlet-name>FileDownload</servlet-name>
+		<servlet-class>com.team.commom.file.FileDownload</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FileDownload</servlet-name>
+		<url-pattern>/FileDownload</url-pattern>
+	</servlet-mapping>
+
 </web-app>
