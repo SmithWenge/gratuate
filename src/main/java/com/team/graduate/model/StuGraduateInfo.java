@@ -3,6 +3,7 @@ package com.team.graduate.model;
 import java.sql.Date;
 
 public class StuGraduateInfo {
+	private String id;
 	private String stuName;		//学生姓名
 	private String stuEnName;	//学生英文姓名
 	private String stuNumber;	//学号
@@ -185,5 +186,11 @@ public class StuGraduateInfo {
 	}
 	public void setStuLeaveType(String stuLeaveType) {
 		this.stuLeaveType = stuLeaveType;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }

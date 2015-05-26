@@ -5,11 +5,9 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,14 +21,14 @@ public class FileDownload extends HttpServlet {
 	/**
 	 * 通过response相应流下载数据录入Template
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		download(request, response);
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		download(request, response);
+//	}
 	
 	/**
 	 * 下载数据录入模板功能
 	 */
-	private HttpServletResponse download(HttpServletRequest request,
+	public static HttpServletResponse download(HttpServletRequest request,
 			HttpServletResponse response) {
 		try {
 			String path = request.getSession().getServletContext().getRealPath("/WEB-INF/data/template/Template.xls");
@@ -59,8 +57,8 @@ public class FileDownload extends HttpServlet {
 		return response;
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		doGet(request, response);
+//	}
 
 }

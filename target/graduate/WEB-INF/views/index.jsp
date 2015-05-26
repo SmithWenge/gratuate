@@ -142,12 +142,12 @@
 	<div class="header">
 		<div class="header-container">
 			<ul class="ulOne">
-				<li><a href="#">首页</a></li>
+				<li><a href="">首页</a></li>
 				<li><a href="#">联系方式</a></li>
 				<li><a href="#">关于</a></li>
 			</ul>
 			<ul class="ulTwo">
-				<li><a href="#">学校首页</a></li>
+				<li><a href="http://www.djtu.edu.cn">学校首页</a></li>
 				<li><a href="#">教务处</a></li>
 				<li><a href="#">学科学位办</a></li>
 			</ul>
@@ -486,9 +486,9 @@
 					</table>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
- -->
+
 	<div class="footer">
 		<div class="footerinside">
 			<p class="footer-p">版权所有 ©2006 - 2015 大连交通大学 | 辽ICP备 05001355号</p>

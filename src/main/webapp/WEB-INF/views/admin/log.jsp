@@ -17,9 +17,6 @@
 	src="<%=basePath%>resource/jquery-2.1.0.js"></script>
 
 <script>
-
-
-
 	//		jQuery(document).ready(function($) {
 	//		  $('#clickOne').click(function() {
 	//		    alert('OK');
@@ -47,13 +44,78 @@
 </script>
 
 <script type="text/javascript">
-	    	$( document ).ready(function() {
-	    		$("#download").click(function() {
-	    			$("#download_form").action = "FileDownload";
-			    	$("#download_form").method = "post";
-			    	$("#download_form").submit();
-			 	});
-	    	});
+	/* function fileDown() {
+		var fd = "http://" + window.location.host + "/graduate/admin/fileDown.action";
+		$("#fileDown").attr("src", fd); */
+	function fileDown() {
+		window.location = "/graduate/admin/fileDown.action";
+	}
+</script>
+<script type="text/javascript">
+	function nextPage() {
+		var num = parseInt($("#pageNum").val()) + 1;
+		$.ajax({
+			url : "page.action?page=" + num,
+			type : "get",
+			dataType : "text",
+			contentType : "application/json; charset=utf-8",
+			success : function(result) {
+				var real = JSON.parse(result);
+				$("#pageNum").val(real.page.number);
+				$("#firstBlock").hide();
+				$("#secondBlock").show();
+
+				var cit = $("#secondBlock");
+				if (cit.size() > 0) {
+					cit.find("tr:not(:first)").remove();
+				}
+
+				var trList = "";
+				$("#secondBlock").append(trList);
+				$.each(real.page.content, function(i, item) {
+					trList += "<tr id='add'><td>" + item.createDate
+							+ "</td><td>" + item.thread + "</td><td>"
+							+ item.level + "</td><td>" + item.message
+							+ "</td></tr>";
+				});
+				$("#secondBlock").append(trList);
+				console.log(real);
+				/* console.log(trList); */
+			}
+		});
+	}
+</script>
+<script type="text/javascript">
+	function lastPage() {
+		var num = parseInt($("#pageNum").val()) - 1;
+		$.ajax({
+			url : "page.action?page=" + num,
+			type : "get",
+			dataType : "text",
+			contentType : "application/json; charset=utf-8",
+			success : function(result) {
+				var real = JSON.parse(result);
+				$("#pageNum").val(real.page.number);
+				$("#firstBlock").hide();
+				$("#secondBlock").show();
+
+				var cit = $("#secondBlock");
+				if (cit.size() > 0) {
+					cit.find("tr:not(:first)").remove();
+				}
+
+				var trList = "";
+				$.each(real.page.content, function(i, item) {
+					trList += "<tr><td>" + item.createDate + "</td><td>"
+							+ item.thread + "</td><td>" + item.level
+							+ "</td><td>" + item.message + "</td></tr>";
+				});
+				$("#secondBlock").append(trList);
+				console.log(real);
+				console.log(trList);
+			}
+		});
+	}
 </script>
 
 <style type="text/css">
@@ -137,9 +199,6 @@ button {
 		</div>
 	</div>
 
-	<form action="<c:url value='/admin/log.action' />" method="post"
-		class="form-horizontal"></form>
-
 	<div id="left-tab">
 		<ul>
 			<li class="active"><a id="clickOne" href="#">日志查询</a></li>
@@ -173,21 +232,21 @@ button {
 					<td colspan=""><input type="checkbox" name="ck" />数据更新</td>
 					<td colspan=""><input type="checkbox" name="ck" />系统信息</td>
 					<td colspan=""><input type="checkbox" name="ck" />其他
-					</th>
 					<td><button>导出</button></td>
 				</tr>
 			</table>
 			<div class="row">
 				<div class="col-md-10" style="margin: 10px">
-					<table class="table table-striped">
+					<table border="1" class="table table-striped" id="firstBlock">
 						<tr>
-							<td>时间</td>
-							<td>thread</td>
-							<td>level</td>
-							<td>class</td>
-							<td>事件描述</td>
+							<th>时间</th>
+							<th colspan="">事件类别</th>
+							<th colspan="">操作标识</th>
+							<th colspan="">事件描述</th>
+							<th colspan="">事件IP</th>
+							<th>备注</th>
 						</tr>
-						<c:forEach items="${logs}" var="log">
+						<c:forEach items="${log}" var="log">
 							<tr>
 								<td>${log.createDate }</td>
 								<td>${log.thread }</td>
@@ -197,25 +256,48 @@ button {
 							</tr>
 						</c:forEach>
 					</table>
+					<table border="1"  class="table table-striped" style="display: none;"
+						id="secondBlock">
+						<tr>
+							<th>时间</th>
+							<th colspan="">事件类别</th>
+							<th colspan="">操作标识</th>
+							<th colspan="">事件描述</th>
+							<th colspan="">事件IP</th>
+							<th>备注</th>
+						</tr>
+					</table>
 				</div>
+
+
+
+				<a onclick="lastPage();" style="color: black">上一页</a> <input
+					type="hidden" value="0" id="pageNum"> <a>当前第页</a> <a
+					onclick="nextPage();" style="color: black">下一页</a> <input
+					type="hidden" value="0" id="pageNum">
 			</div>
 		</div>
 		<!--right end-->
 	</div>
 	<div id="blockTwo">
 		<h2>数据管理</h2>
-		<h3>
-		
-			<div class="col-sm-2">
-				<form id="download_form" action="/FileDownload" method="post">
-					操作模板文件 <button type="button" class="btn btn-info" id="download">获取模板</button>
-				</form>
-			</div>
-		</h3>
-		<h3>
-			执行数据操作
-			<button>开始</button>
-		</h3>
+		<div class="col-sm-5">
+			<form action="/graduate/admin/fileDown.action" method="post">
+				<button type="submit" class="btn btn-info">获取模板</button>
+			</form>
+		</div>
+		<div class="col-sm-5">
+			<!-- 上传数据文件 -->
+			<form role="form" action="/graduate/admin/fileUp.action"
+				method="post" enctype="multipart/form-data">
+
+				<div class="form-group">
+					<input type="file" id="exampleInputFile" name="dataFile">
+				</div>
+				<button type="submit" class="btn btn-default">导入数据</button>
+
+			</form>
+		</div>
 		<br />
 		<h2>照片管理</h2>
 		<h3>
@@ -227,28 +309,13 @@ button {
 			<button>开始</button>
 		</h3>
 	</div>
+	<div class="footer" style="position:absolute;bottom:0">
+		<div class="footerinside">
+			<p class="footer-p">版权所有 ©2006 - 2015 大连交通大学 | 辽ICP备 05001355号</p>
+			<p class="footer-p">学校地址：大连市沙河口区黄河路794号 邮编：116028
+				联系我们：xcbu@djtu.edu.cn</p>
+		</div>
+	</div>
 
 </body>
 </html>
-
-
-
-
-<!--  <tr>
-	<td>logId</td>
-	<td>createDate</td>
-	<td>thread</td>
-	<td>level</td>
-	<td>class</td>
-	<td>message</td>
-</tr>
-<c:forEach items="${logs}" var="log">
-	<tr>
-		<td>${log.logId }</td>
-		<td>${log.createDate }</td>
-		<td>${log.thread }</td>
-		<td>${log.level }</td>
-		<td>${log.clazz }</td>
-		<td>${log.message }</td>
-	</tr>
-		</c:forEach>	-->

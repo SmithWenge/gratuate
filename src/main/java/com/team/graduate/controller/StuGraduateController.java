@@ -1,15 +1,12 @@
 package com.team.graduate.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.team.graduate.common.AuthCodeGenerator;
 import com.team.graduate.model.StuGraduateInfo;
@@ -21,49 +18,53 @@ public class StuGraduateController {
 	@Autowired
 	private StuGraduateService service;
 
-	@ResponseBody
-	@RequestMapping("/select")
-	public Map<String, StuGraduateInfo> selectResult(@RequestBody StuGraduateInfo stu, HttpServletRequest request) {
-		String authCode = request.getSession().getAttribute(AuthCodeGenerator.AUTHENTICATION_CODE).toString();
-		Map<String, StuGraduateInfo> map = new HashMap<String, StuGraduateInfo>();
+	@RequestMapping("/searchResult")
+	public ModelAndView selectResult(@ModelAttribute StuGraduateInfo stu,
+			HttpServletRequest request) {
+		String authCode = request.getSession()
+				.getAttribute(AuthCodeGenerator.AUTHENTICATION_CODE).toString();
+		ModelAndView mav = new ModelAndView();
 		if (authCode != null && authCode.equals(stu.getAuthCode())) {
 			StuGraduateInfo stuInfo = service.selectStuGraduateInfo(stu);
-			
 			if (stuInfo != null) {
-				map.put("stu", stuInfo);
+				mav.addObject("stu", stuInfo);
+				mav.setViewName("stu/searchResult");
+
 			} else {
-				map.put("stu", new StuGraduateInfo("null"));
+				mav.setViewName("redirect:/error.jsp");
 			}
 		} else {
 			StuGraduateInfo infoAuthCode = new StuGraduateInfo();
 			infoAuthCode.setAuthCode(null);
+			mav.addObject("stu", infoAuthCode);
+			mav.setViewName("redirect:/authError.jsp");
 			
-			map.put("stu", infoAuthCode);
 		}
-		
-		return map;
+		return mav;
 	}
 
-	@ResponseBody
-	@RequestMapping("/auth")
-	public Map<String, StuGraduateInfo> authResult(@RequestBody StuGraduateInfo stu, HttpServletRequest request) {
-		String authCode = request.getSession().getAttribute(AuthCodeGenerator.AUTHENTICATION_CODE).toString();
-		Map<String, StuGraduateInfo> map = new HashMap<String, StuGraduateInfo>();
+	@RequestMapping("/authResult")
+	public ModelAndView authResult(@ModelAttribute StuGraduateInfo stu,
+			HttpServletRequest request) {
+		String authCode = request.getSession()
+				.getAttribute(AuthCodeGenerator.AUTHENTICATION_CODE).toString();
+		ModelAndView mav = new ModelAndView();
 		if (authCode != null && authCode.equals(stu.getAuthCode())) {
 			StuGraduateInfo stuInfo = service.authStuGraduateInfo(stu);
-			
+
 			if (stuInfo != null) {
-				map.put("stu", stuInfo);
+				mav.addObject("stu", stuInfo);
+				mav.setViewName("stu/authResult");
+
 			} else {
-				map.put("stu", new StuGraduateInfo(null));
+				mav.setViewName("redirect:/error.jsp");
 			}
 		} else {
 			StuGraduateInfo infoAuthCode = new StuGraduateInfo();
 			infoAuthCode.setAuthCode(null);
-			
-			map.put("stu", infoAuthCode);
+			mav.addObject("stu", infoAuthCode);
+			mav.setViewName("redirect:/authError.jsp");
 		}
-		
-		return map;
+		return mav;
 	}
 }

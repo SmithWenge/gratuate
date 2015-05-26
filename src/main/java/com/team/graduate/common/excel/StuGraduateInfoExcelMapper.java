@@ -1,5 +1,7 @@
 package com.team.graduate.common.excel;
 
+import java.util.UUID;
+
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 
@@ -52,6 +54,8 @@ public class StuGraduateInfoExcelMapper implements ExcelMapper<StuGraduateInfo> 
 		graduateInfo.setStuPostgraduateNum(DataConvUtil.dataNullToString(strings[20]));
 		graduateInfo.setStuCompletionNum(DataConvUtil.dataNullToString(strings[21]));
 		graduateInfo.setStuLeaveType(DataConvUtil.dataNullToString(strings[22]));
+		graduateInfo.setStuPublicationDate(DataConvUtil.dataFromStringToDate(strings[23]));
+		graduateInfo.setId(UUID.randomUUID().toString());
 		
 		return graduateInfo;
 	}

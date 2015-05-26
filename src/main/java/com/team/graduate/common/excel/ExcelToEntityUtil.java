@@ -14,8 +14,9 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class ExcelToEntityUtil <T>{
 	public List<T> readFromExcel(File file, int ignoreRow, ExcelMapper<T> mapper) {
 		List<T> list = null;
