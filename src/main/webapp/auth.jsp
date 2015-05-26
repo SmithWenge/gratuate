@@ -87,10 +87,10 @@
 									</tr>
 									<tr>
 										<td>验证码：</td>
-										<td><input style="width: 100px;" type="text"
-											name="authCode" id="authCodeAuth" /> <a
-											style="color: #3581B7;" onclick="getNewAuthCode();"> <img
-												id="imgAuthCodeAuth" src="<c:url value='/code.action' />" />
+										<td>
+											<input style="width: 100px;" type="text" name="authCode" id="authCodeAuth" /> <a
+											style="color: #3581B7;" onclick="getNewAuthCode();">
+											<img id="imgAuthCodeAuth" src="<c:url value='/code.action' />" />
 												<small><sub>看不清，换一张</sub></small>
 										</a></td>
 									</tr>

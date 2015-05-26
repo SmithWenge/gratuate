@@ -40,6 +40,8 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.30" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.5" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.10-FINAL" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet.jsp:jsp-api:2.1" level="project" />
@@ -104,5 +106,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.10" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.1.2" level="project" />
+    <orderEntry type="library" name="Maven: fakepath:kaptcha:2.3.2" level="project" />
   </component>
 </module>

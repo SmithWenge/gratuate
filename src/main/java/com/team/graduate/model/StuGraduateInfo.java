@@ -28,21 +28,14 @@ public class StuGraduateInfo {
 	private String stuCompletionNum;		//结业证编号
 	private String stuLeaveType;			//离校类型
 	private Date stuPublicationDate;        //发证日期
-	private String authCode;                //验证码
-	
+
 	public StuGraduateInfo(String stuName) {
 		this.stuName =stuName;
 	}
 	public StuGraduateInfo() {
 		
 	}
-	
-	public String getAuthCode() {
-		return authCode;
-	}
-	public void setAuthCode(String authCode) {
-		this.authCode = authCode;
-	}
+
 	public Date getStuPublicationDate() {
 		return stuPublicationDate;
 	}
