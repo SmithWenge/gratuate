@@ -186,4 +186,9 @@ public class StuGraduateInfo {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+//	验证方法
+	public boolean isLegal() {
+		return this.getStuName() != null && this.getStuIdentificationNum().length() == 21;
+	}
 }

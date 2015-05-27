@@ -1,8 +1,10 @@
-package com.team.graduate.dao;
+package com.team.graduate.repository.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import com.team.graduate.repository.StuGraduateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,16 +13,16 @@ import org.springframework.stereotype.Repository;
 import com.team.graduate.model.StuGraduateInfo;
 
 @Repository
-public class StuGraduateDaoImpl {
+public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	public StuGraduateInfo selectNameAndIdentificationNum(StuGraduateInfo stu) {
+	public List<StuGraduateInfo> selectNameAndIdentificationNum(StuGraduateInfo stu) {
 		String sql = "select stuName,stuGraduationCardNum, stuMajorDegree, stuSpecialty, stuIdentificationNum from stu_graduate_info where stuName=? and stuIdentificationNum=?";
 		Object[] args = { stu.getStuName(), stu.getStuIdentificationNum() };
 
 		try {
-			return jdbcTemplate.queryForObject(sql, args, new StuRowMapper());
+			return jdbcTemplate.query(sql, args, new StuRowMapper());
 		} catch (Exception e) {
 			return null;
 		}

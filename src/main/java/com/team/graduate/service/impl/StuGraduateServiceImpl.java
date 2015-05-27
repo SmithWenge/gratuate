@@ -3,19 +3,21 @@ package com.team.graduate.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.team.graduate.dao.StuGraduateDaoImpl;
+import com.team.graduate.repository.impl.StuGraduateRepositoryImpl;
 import com.team.graduate.model.StuGraduateInfo;
 import com.team.graduate.service.StuGraduateService;
+
+import java.util.List;
 
 @Service
 public class StuGraduateServiceImpl implements StuGraduateService {
 	@Autowired
-	private StuGraduateDaoImpl impl;
+	private StuGraduateRepositoryImpl impl;
 
-	public StuGraduateInfo selectStuGraduateInfo(StuGraduateInfo stu) {
-		StuGraduateInfo info = impl.selectNameAndIdentificationNum(stu);
+	public List<StuGraduateInfo> selectStuGraduateInfo(StuGraduateInfo stu) {
+		List<StuGraduateInfo> infos = impl.selectNameAndIdentificationNum(stu);
 		
-		return info;
+		return infos;
 	}
 
 	public StuGraduateInfo authStuGraduateInfo(StuGraduateInfo stu) {

@@ -4,7 +4,7 @@
 
 <div id="main-text">
 	<div id="search">
-		<form action="${reqBaseURL}/stu/search.action" method="post">
+		<form id="search-form" action="${reqBaseURL}/stu/search.action" method="post">
 			<div class="mainLeft">
 				<table>
 					<tr>
@@ -27,7 +27,7 @@
 						<td>
 							<a id="change">
 								<img id="authCodeImg" src="${reqBaseURL}/captchaImage.action" />
-								<span>看不清，换一张</span>
+								<span style="color: #0f0f0f;">看不清，换一张</span>
 							</a>
 						</td>
 					</tr>
@@ -42,8 +42,55 @@
 		<script type="text/javascript">
 			$(function() {
 				$("#change").on('click', function() {
-					$("#authCodeImg").attr("src", "${reqBaseURL}/captchaImage.action");
-					console.log("hello");
+					$("#authCodeImg").attr("src", "${reqBaseURL}/captchaImage.action?ran=" + new Date() / 100);
+				});
+
+				jQuery.validator.addMethod("idLength", function(value, element, param) {
+					return this.optional(element) || value.length == param;
+				}, $.validator.format("请确认你的身份证号的长度为 {0}"));
+
+
+
+				$("#search-form").validate({
+					rules : {
+						stuName : {
+							required : true,
+							minlength : 2,
+							maxlength : 10
+						},
+						stuIdentificationNum : {
+							required : true,
+							idLength : 21
+						},
+						authCode : {
+							required : true,
+							remote: {
+								url : "${reqBaseURL}/router/validateCode.action",
+								type : "post",
+								dataType : "json",
+								data : {
+									authCode : function() {
+										return $("#authCode").val();
+									}
+								}
+							}
+						}
+					},
+					messages : {
+						stuName : {
+							required : "请输入您的姓名",
+							minlength : "您的姓名的字数需要在2到10之间",
+							maxlength : "您的姓名的字数需要在2到10之间"
+						},
+						stuIdentificationNum : {
+							required : "请填写您的身份证号",
+							idLength : "您的身份证号长度应该是21位"
+						},
+						authCode : {
+							required : "请填写验证码",
+							remote: "请输入正确的验证码"
+						}
+					}
 				});
 			});
 		</script>
