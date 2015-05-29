@@ -28,6 +28,16 @@ public class StuGraduateInfo {
 	private String stuCompletionNum;		//结业证编号
 	private String stuLeaveType;			//离校类型
 	private Date stuPublicationDate;        //发证日期
+	private String stuDiplomaNum;
+
+	public void setStuDiplomaNum(String stuDiplomaNum) {
+		this.stuDiplomaNum = stuDiplomaNum;
+	}
+
+	public String getStuDiplomaNum() {
+
+		return stuDiplomaNum;
+	}
 
 	public StuGraduateInfo(String stuName) {
 		this.stuName =stuName;
@@ -190,5 +200,12 @@ public class StuGraduateInfo {
 //	验证方法
 	public boolean isLegal() {
 		return this.getStuName() != null && this.getStuIdentificationNum().length() == 21;
+	}
+
+//	认证验证方法
+	public boolean isAuthenticationLegal() {
+		return this.getStuName() != null
+				&& this.getStuDiplomaNum().length() == 16
+				&& this.getStuPublicationDate() != null;
 	}
 }

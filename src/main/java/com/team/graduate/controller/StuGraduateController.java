@@ -23,6 +23,7 @@ public class StuGraduateController {
 	private StuGraduateService service;
 
 	private static final String SEARCH_REDIRECT_LOCATION = "redirect:/router/search.action";
+	private static final String Authentication_REDIRECT_LOCATION ="redirect:/router/authentication.action";
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute StuGraduateInfo stu,
@@ -56,28 +57,36 @@ public class StuGraduateController {
 		return SEARCH_REDIRECT_LOCATION;
 	}
 
-	@RequestMapping("/auth")
-	public ModelAndView authResult(@ModelAttribute StuGraduateInfo stu,
-			HttpServletRequest request, @RequestParam("authCode") String code) {
+	@RequestMapping(value = "/authentication", method = RequestMethod.POST)
+	public ModelAndView authentication(@ModelAttribute StuGraduateInfo stu,
+									   HttpServletRequest request, @RequestParam("authCode") String code) {
+		if (!stu.isAuthenticationLegal()) return new ModelAndView(Authentication_REDIRECT_LOCATION);
+
 		String authCode = request.getSession()
 				.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString();
+
 		ModelAndView mav = new ModelAndView();
+
 		if (authCode != null && authCode.equals(code)) {
 			StuGraduateInfo stuInfo = service.authStuGraduateInfo(stu);
 
 			if (stuInfo != null) {
 				mav.addObject("stu", stuInfo);
-				mav.setViewName("stu/authResult");
 
+				mav.setViewName("stu/result/authentication");
 			} else {
-				mav.setViewName("redirect:/error.jsp");
+				mav.addObject("stu", stu);
+				mav.setViewName("stu/error/authentication");
 			}
 		} else {
-			StuGraduateInfo infoAuthCode = new StuGraduateInfo();
-//			infoAuthCode.setAuthCode(null);
-			mav.addObject("stu", infoAuthCode);
-			mav.setViewName("redirect:/authError.jsp");
+			return new ModelAndView(Authentication_REDIRECT_LOCATION);
 		}
+
 		return mav;
+	}
+
+	@RequestMapping(value = "/authentication", method = RequestMethod.GET)
+	public String authenticationGet() {
+		return "stu/authentication";
 	}
 }

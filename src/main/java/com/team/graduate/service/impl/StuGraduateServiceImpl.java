@@ -21,7 +21,7 @@ public class StuGraduateServiceImpl implements StuGraduateService {
 	}
 
 	public StuGraduateInfo authStuGraduateInfo(StuGraduateInfo stu) {
-		StuGraduateInfo info = impl.authNameAndDegreeNumandPubDate(stu);
+		StuGraduateInfo info = impl.authNameAndDegreeNumAndPubDate(stu);
 		
 		return info;
 	}

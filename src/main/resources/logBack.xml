@@ -30,14 +30,14 @@
     </appender>
 
     <!-- Output to Database -->
-    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
-        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
-            <driverClass>com.mysql.jdbc.Driver</driverClass>
-            <url>jdbc:mysql://222.26.224.232:3306/join</url>
-            <user>join</user>
-            <password>join</password>
-        </connectionSource>
-    </appender>
+    <!--<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">-->
+        <!--<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">-->
+            <!--<driverClass>com.mysql.jdbc.Driver</driverClass>-->
+            <!--<url>jdbc:mysql://222.26.224.232:3306/join</url>-->
+            <!--<user>join</user>-->
+            <!--<password>join</password>-->
+        <!--</connectionSource>-->
+    <!--</appender>-->
 
     <logger name="info" level="debug" additivity="fasle">
         <appender-ref ref="STDOUT" />

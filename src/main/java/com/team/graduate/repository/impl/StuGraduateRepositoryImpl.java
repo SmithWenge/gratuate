@@ -1,5 +1,8 @@
 package com.team.graduate.repository.impl;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -28,9 +31,9 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 		}
 	}
 
-	public StuGraduateInfo authNameAndDegreeNumandPubDate(StuGraduateInfo stu) {
-		String sql = "select stuName, stuGender, stuBrithday,  stuSpecialty, stuMajorDegree, stuMajorDegreeCertNum, stuPublicationDate from stu_graduate_info where stuName=? and stuMajorDegreeCertNum=?";
-		Object[] args = { stu.getStuName(), stu.getStuMajorDegreeCertNum()};
+	public StuGraduateInfo authNameAndDegreeNumAndPubDate(StuGraduateInfo stu) {
+		String sql = "select stuName, stuGender, stuBrithday, stuSpecialty, stuMajorDegree, stuDiplomaNum, stuPublicationDate, stuIdentificationNum from stu_graduate_info where stuName=? and stuDiplomaNum=? and stuPublicationDate=?";
+		Object[] args = { stu.getStuName(), stu.getStuDiplomaNum(), stu.getStuPublicationDate() };
 		try {
 			return jdbcTemplate.queryForObject(sql, args, new AuthStuRowMapper());
 		} catch (Exception e) {
@@ -42,6 +45,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 		public StuGraduateInfo mapRow(ResultSet rs, int rowNum)
 				throws SQLException {
 			StuGraduateInfo stu = new StuGraduateInfo();
+
 			stu.setStuName(rs.getString("stuName"));
 			stu.setStuIdentificationNum(rs.getString("stuIdentificationNum"));
 			stu.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
@@ -56,14 +60,28 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 		public StuGraduateInfo mapRow(ResultSet rs, int rowNum)
 				throws SQLException {
 			StuGraduateInfo stu = new StuGraduateInfo();
+
 			stu.setStuName(rs.getString("stuName"));
 			stu.setStuMajorDegree(rs.getString("stuMajorDegree"));
-			stu.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
+			stu.setStuDiplomaNum(rs.getString("stuDiplomaNum"));
 			stu.setStuPublicationDate(rs.getDate("stuPublicationDate"));
 			stu.setStuGender(rs.getString("stuGender"));
 			stu.setStuBrithday(rs.getDate("stuBrithday"));
 			stu.setStuSpecialty(rs.getString("stuSpecialty"));
-			
+			stu.setStuPublicationDate(rs.getDate("stuPublicationDate"));
+			String photoName = "default";
+			try {
+				photoName = MessageDigest.getInstance("MD5")
+						.digest(rs.getString("stuIdentificationNum").getBytes("UTF-8"))
+						.toString();
+				System.out.println(photoName);
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			stu.setStuIdentificationNum(photoName);
+
 			return stu;
 		}
 	}

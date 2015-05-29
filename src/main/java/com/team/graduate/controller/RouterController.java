@@ -1,13 +1,16 @@
 package com.team.graduate.controller;
 
 import com.google.code.kaptcha.Constants;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,9 +28,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/router")
 public class RouterController {
+    @Autowired
+    ServletContext context;
+
     private static final String VALIDATE_CODE = "validateCode";
 
-    @RequestMapping("/search")
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String routeToStuSearch() {
         return "stu/search";
     }
@@ -38,5 +44,18 @@ public class RouterController {
                                             @RequestParam("authCode") String authCode) {
 
         return request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY).toString().equals(authCode);
+    }
+
+    @RequestMapping(value = "/authentication", method = RequestMethod.GET)
+    public String routeToStuAuth() {
+        return "stu/authentication";
+    }
+
+    @RequestMapping("/photo/{name}")
+    public void photo(HttpServletResponse response, HttpServletRequest request,
+                      @PathVariable("name") String name) throws IOException {
+        response.setContentType("image/jpeg");
+        InputStream in = context.getResourceAsStream("/WEB-INF/images/" + name + ".jpg");
+        IOUtils.copy(in, response.getOutputStream());
     }
 }
