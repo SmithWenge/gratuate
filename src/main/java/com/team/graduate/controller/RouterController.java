@@ -1,17 +1,21 @@
 package com.team.graduate.controller;
 
 import com.google.code.kaptcha.Constants;
+import com.team.graduate.service.StuGraduateService;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +35,9 @@ public class RouterController {
     @Autowired
     ServletContext context;
 
+    @Autowired
+    private StuGraduateService stuGraduateService;
+
     private static final String VALIDATE_CODE = "validateCode";
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
@@ -47,8 +54,10 @@ public class RouterController {
     }
 
     @RequestMapping(value = "/authentication", method = RequestMethod.GET)
-    public String routeToStuAuth() {
-        return "stu/authentication";
+    public ModelAndView routeToStuAuth() {
+        List<Date> dates =  stuGraduateService.getAllDate();
+
+        return new ModelAndView("stu/authentication", "dates", dates);
     }
 
     @RequestMapping("/photo/{name}")

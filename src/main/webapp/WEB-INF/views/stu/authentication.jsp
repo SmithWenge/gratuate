@@ -18,7 +18,15 @@
 					</tr>
 					<tr>
 						<td>发证日期：</td>
-						<td><input type="date" name="stuPublicationDate" id="stuPublicationDate" placeholder="年/月/日"/></td>
+						<%--<td><input type="date" name="stuPublicationDate" id="stuPublicationDate" placeholder="年/月/日"/></td>--%>
+						<td>
+							<select name="stuPublicationDate" id="stuPublicationDate"
+									class="selectpicker" data-size="5" data-width="200px">
+								<c:forEach items="${dates}" var="date">
+									<option value="${date}">${date}</option>
+								</c:forEach>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td>验证码：</td>

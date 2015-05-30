@@ -2,6 +2,7 @@ package com.team.graduate.repository;
 
 import com.team.graduate.model.StuGraduateInfo;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -17,4 +18,6 @@ import java.util.List;
  */
 public interface StuGraduateRepository {
     public List<StuGraduateInfo> selectNameAndIdentificationNum(StuGraduateInfo info);
+    public StuGraduateInfo authNameAndDegreeNumAndPubDate(StuGraduateInfo stu);
+    public List<Date> getDiffDate();
 }

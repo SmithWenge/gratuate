@@ -3,5 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/b7d8a4d271c75c93629a5b01fc66eacb.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/bootstrap-select.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resource/bootstrap/js/bootstrap-select.js" charset="GBK" />
   </component>
 </project>

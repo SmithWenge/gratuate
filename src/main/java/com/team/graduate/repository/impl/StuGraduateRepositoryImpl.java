@@ -3,6 +3,7 @@ package com.team.graduate.repository.impl;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -40,6 +41,12 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	public List<Date> getDiffDate() {
+		String sql = "SELECT distinct(stuPublicationDate) FROM graduate.stu_graduate_info order by stuPublicationDate desc";
+
+		return jdbcTemplate.queryForList(sql, Date.class);
 	}
 
 	private class StuRowMapper implements RowMapper<StuGraduateInfo> {

@@ -13,9 +13,15 @@
 <head>
   <meta charset="utf-8" />
   <title>大连交通大学学位查询与认证系统</title>
+  <link rel="stylesheet" href="<%=basePath%>resource/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="<%=basePath%>resource/bootstrap/css/bootstrap-select.css" />
   <link rel="stylesheet" href="<%=basePath%>resource/define3.0.css" />
   <script type="text/javascript"
           src="<%=basePath%>resource/jquery-2.1.0.js"></script>
+  <script src="<%=basePath%>resource/bootstrap/js/bootstrap.js"
+          type="text/javascript"></script>
+  <script src="<%=basePath%>resource/bootstrap/js/bootstrap-select.js"
+          type="text/javascript"></script>
   <script src="<%=basePath%>resource/jquery.validate.js"
           type="text/javascript"></script>
   <script src="<%=basePath%>resource/jquery.metadata.js"

@@ -7,6 +7,7 @@ import com.team.graduate.repository.impl.StuGraduateRepositoryImpl;
 import com.team.graduate.model.StuGraduateInfo;
 import com.team.graduate.service.StuGraduateService;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -26,4 +27,7 @@ public class StuGraduateServiceImpl implements StuGraduateService {
 		return info;
 	}
 
+	public List<Date> getAllDate() {
+		return impl.getDiffDate();
+	}
 }
