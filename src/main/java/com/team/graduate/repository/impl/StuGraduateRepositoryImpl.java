@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.team.graduate.common.util.MD5Util;
 import com.team.graduate.repository.StuGraduateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -69,18 +70,11 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 			stu.setStuBrithday(rs.getDate("stuBrithday"));
 			stu.setStuSpecialty(rs.getString("stuSpecialty"));
 			stu.setStuPublicationDate(rs.getDate("stuPublicationDate"));
-			String photoName = "default";
-			try {
-				photoName = MessageDigest.getInstance("MD5")
-						.digest(rs.getString("stuIdentificationNum").getBytes("UTF-8"))
-						.toString();
-				System.out.println(photoName);
-			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
-			stu.setStuIdentificationNum(photoName);
+//			md5
+			String picturePath = MD5Util.getMD5String(rs.getString("stuIdentificationNum"));
+			if (null == picturePath) picturePath = "default";
+
+			stu.setStuIdentificationNum(picturePath);
 
 			return stu;
 		}

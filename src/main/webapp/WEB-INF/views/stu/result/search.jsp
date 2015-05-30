@@ -31,20 +31,17 @@
 				<td>证书编号：</td>
 				<td>学位类型</td>
 				<td>专业</td>
-				<td>备注</td>
 			</tr>
 			<c:forEach items="${stus}" var="stu">
 				<tr>
 					<td id="stuGraduationCardNum"></td>
 					<td id="stuMajorDegree"></td>
 					<td id="stuSpecialty"></td>
-					<td>----</td>
 				</tr>
 				<tr>
 					<td>${stu.stuGraduationCardNum}</td>
 					<td>${stu.stuMajorDegree}</td>
 					<td>${stu.stuSpecialty}</td>
-					<td>&nbsp;</td>
 				</tr>
 			</c:forEach>
 			<tr>
