@@ -3,9 +3,11 @@ package com.team.graduate.repository.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.team.graduate.model.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +17,8 @@ import com.team.graduate.repository.AdminRepository;
 
 @Repository
 public class AdminRepositoryImpl implements AdminRepository {
-
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
     @Autowired
     private RepositoryUtil<Log> repository;
 
@@ -25,6 +28,17 @@ public class AdminRepositoryImpl implements AdminRepository {
         Page<Log> page = repository.select4Page(sql, pageable, args, new LogRowMapperParam());
 
         return page;
+    }
+
+    public Admin select(Admin admin) {
+        String sql = "SELECT username FROM stu_graduate_loginuser WHERE username = ? AND password = ?";
+        Object[] args = { admin.getUsername(), admin.getPassword() };
+
+        try {
+            return  jdbcTemplate.queryForObject(sql, args, new AdminRowMapper());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     private class LogRowMapperParam implements ParameterizedRowMapper<Log> {
@@ -40,6 +54,15 @@ public class AdminRepositoryImpl implements AdminRepository {
             return log;
         }
     }
-    
-    
+
+    private class AdminRowMapper implements ParameterizedRowMapper<Admin> {
+
+        public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+            Admin admin = new Admin();
+            admin.setUsername(rs.getString("username"));
+
+            return admin;
+        }
+    }
 }

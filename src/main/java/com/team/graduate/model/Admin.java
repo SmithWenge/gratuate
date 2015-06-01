@@ -3,7 +3,7 @@ package com.team.graduate.model;
 public class Admin {
 	private int id;
 	private String username;
-	private String userpass;
+	private String password;
 	public int getId() {
 		return id;
 	}
@@ -16,12 +16,10 @@ public class Admin {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getUserpass() {
-		return userpass;
+	public String getPassword() {
+		return password;
 	}
-	public void setUserpass(String userpass) {
-		this.userpass = userpass;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	
-	
 }

@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
@@ -66,5 +67,14 @@ public class RouterController {
         response.setContentType("image/jpeg");
         InputStream in = context.getResourceAsStream("/WEB-INF/images/" + name + ".jpg");
         IOUtils.copy(in, response.getOutputStream());
+    }
+
+    @RequestMapping("/admin")
+    public String admin(HttpSession session) {
+        if (null != session.getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return "admin/result/importIndex";
+        }
+
+        return "admin/login";
     }
 }

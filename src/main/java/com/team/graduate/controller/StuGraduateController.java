@@ -35,6 +35,9 @@ public class StuGraduateController {
 		ModelAndView mav = new ModelAndView();
 
 		if (authCode != null && authCode.equals(code)) {
+//			reset key
+			request.getSession().setAttribute(Constants.KAPTCHA_SESSION_KEY, null);
+
 			List<StuGraduateInfo> stuInfo = service.selectStuGraduateInfo(stu);
 			if (stuInfo != null) {
 				mav.addObject("stus", stuInfo);
@@ -68,6 +71,8 @@ public class StuGraduateController {
 		ModelAndView mav = new ModelAndView();
 
 		if (authCode != null && authCode.equals(code)) {
+//			reset key
+			request.getSession().setAttribute(Constants.KAPTCHA_SESSION_KEY, null);
 			StuGraduateInfo stuInfo = service.authStuGraduateInfo(stu);
 
 			if (stuInfo != null) {

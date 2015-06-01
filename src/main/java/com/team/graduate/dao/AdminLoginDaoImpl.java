@@ -26,7 +26,7 @@ public class AdminLoginDaoImpl {
 	
 	public Admin login(Admin admin) {
 		String sql = "SELECT username FROM stu_graduate_loginuser where username=? and userpass=?";
-		Object[] args = { admin.getUsername(), admin.getUserpass() };
+		Object[] args = { admin.getUsername(), admin.getPassword() };
 		try {
 			return jdbcTemplate.queryForObject(sql, args, new AdminRowMapper());
 		} catch (Exception e) {
