@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.*;
 
 /**
  * CopyRight (c) 2015 : 56Team
@@ -59,5 +62,42 @@ public class AdminController {
         session.removeAttribute(ADMIN_LOGIN_TAG);
 
         return "redirect:/router/admin.action";
+    }
+
+    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    public String downloadTemplate(HttpServletResponse response, HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG)) return "redirect:/router/admin.action";
+
+        String templatePath = session.getServletContext().getRealPath("/") + "WEB-INF/data/template/Template.xls";
+        try {
+            File file = new File(templatePath);
+
+            response.setContentType("application/x-excel");
+            response.setCharacterEncoding("UTF-8");
+            response.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+            response.setHeader("Content-Length", String.valueOf(file.length()));
+
+            int length = 0;
+            byte[] buffer = new byte[1024];
+
+            FileInputStream fis = new FileInputStream(file);
+            OutputStream os = response.getOutputStream();
+
+            while (-1 != (length = fis.read(buffer, 0, buffer.length))) {
+                os.write(buffer, 0, length);
+            }
+
+            os.flush();
+            os.close();
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
     }
 }
