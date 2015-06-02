@@ -81,7 +81,6 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-elasticsearch:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.7" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:1.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:4.10.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:4.10.3" level="project" />
@@ -107,5 +106,6 @@
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: fakepath:kaptcha:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.8" level="project" />
   </component>
 </module>

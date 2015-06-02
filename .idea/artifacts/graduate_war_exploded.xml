@@ -48,7 +48,6 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-elasticsearch:1.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
-          <element id="library" level="project" name="Maven: joda-time:joda-time:2.7" />
           <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:1.4.4" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:4.10.3" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:4.10.3" />
@@ -74,6 +73,7 @@
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.2" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.2" />
           <element id="library" level="project" name="Maven: fakepath:kaptcha:2.3.2" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.8" />
         </element>
       </element>
       <element id="directory" name="META-INF">

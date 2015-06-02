@@ -1,7 +1,11 @@
 package com.team.graduate.service.impl;
 
+import java.io.File;
 import java.util.List;
 
+import com.team.graduate.common.excel.ExcelConverter;
+import com.team.graduate.common.excel.StuGraduateInfoExcelMapper;
+import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -18,10 +22,19 @@ import com.team.graduate.repository.AdminRepository;
 public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminRepository repository;
+	@Autowired
+	private ExcelConverter<StuGraduateInfo> converter;
 
 	public Admin login(Admin admin) {
 
 		return repository.select(admin);
+	}
+
+	public void importData(File file) {
+		List<StuGraduateInfo> importStudents = converter.readFromExcel(file, 1, new StuGraduateInfoExcelMapper());
+
+//		TODO if data is regal
+		System.out.println();
 	}
 
 

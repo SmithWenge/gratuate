@@ -17,7 +17,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ExcelToEntityUtil <T>{
+public class ExcelConverter<T> {
 	public List<T> readFromExcel(File file, int ignoreRow, ExcelMapper<T> mapper) {
 		List<T> list = null;
 		BufferedInputStream bis = null;
@@ -36,10 +36,10 @@ public class ExcelToEntityUtil <T>{
 				for (int rowIndex = ignoreRow; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
 					//获得sheet中的每一行
 					HSSFRow row = sheet.getRow(rowIndex);
-					
-					if (null == row) 
+
+					if (null == row)
 						continue;
-					
+
 					list.add(mapper.mapStringArray(row));
 				}
 			}
@@ -57,25 +57,5 @@ public class ExcelToEntityUtil <T>{
 		}
 		
 		return list;
-	}
-
-	public static  String getTypeValue(HSSFCell cell) {
-		switch (cell.getCellType()) {
-		case HSSFCell.CELL_TYPE_STRING:
-			return cell.getStringCellValue();
-		case HSSFCell.CELL_TYPE_BLANK:
-			break;
-		case HSSFCell.CELL_TYPE_NUMERIC:
-			//判断是够是日期类型
-			if (HSSFDateUtil.isCellDateFormatted(cell)) {
-				return  cell.getDateCellValue().toString();
-			} else {
-				return String.valueOf(cell.getNumericCellValue());
-			}
-		default:
-			return "";
-		}
-		
-		return "";
 	}
 }

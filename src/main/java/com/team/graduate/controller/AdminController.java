@@ -4,12 +4,14 @@ import com.google.code.kaptcha.Constants;
 import com.team.graduate.common.util.MD5Util;
 import com.team.graduate.model.Admin;
 import com.team.graduate.service.AdminService;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +35,7 @@ import java.io.*;
 @RequestMapping("/admin")
 public class AdminController {
     public static final String ADMIN_LOGIN_TAG = "adminLogin";
+    public static final String UPLOAD_EXCEL_FILE_NAME ="targetFile";
     @Autowired
     private AdminService service;
 
@@ -61,6 +64,54 @@ public class AdminController {
     public String adminLogout(HttpSession session) {
         session.removeAttribute(ADMIN_LOGIN_TAG);
 
+        return "redirect:/router/admin.action";
+    }
+
+    @RequestMapping(value = "/import", method = RequestMethod.POST)
+    public ModelAndView processDataImport(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+        if (null == request.getSession().getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView("redirect:/router/admin.action");
+
+        File importFile = save(file, request);
+
+        if (null == importFile) return new ModelAndView("redirect:/router/admin.action");
+
+        service.importData(importFile);
+
+        return new ModelAndView();
+    }
+
+    private File save(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+        String targetPath = request.getSession().getServletContext().getRealPath("/WEB-INF/data/real/");
+        String sourceFileName = file.getOriginalFilename();
+
+        String dateString = new DateTime().toString("MM-dd-yyyy-HH-mm-ss-SSS");
+        String prefixName = sourceFileName.substring(0, sourceFileName.indexOf("."));
+        String subName = sourceFileName.substring(sourceFileName.lastIndexOf("."));
+        String newName = prefixName + "-" + dateString + subName;
+
+        File targetFile = new File(targetPath, newName);
+        request.getSession().setAttribute(UPLOAD_EXCEL_FILE_NAME, targetFile.getName());
+
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
+        }
+
+        try {
+            file.transferTo(targetFile);
+
+            return targetFile;
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/import", method = RequestMethod.GET)
+    public String processDataImport() {
         return "redirect:/router/admin.action";
     }
 
