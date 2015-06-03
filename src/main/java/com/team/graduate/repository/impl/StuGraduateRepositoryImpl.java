@@ -34,8 +34,8 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 	}
 
 	public StuGraduateInfo authNameAndDegreeNumAndPubDate(StuGraduateInfo stu) {
-		String sql = "select stuName, stuGender, stuBrithday, stuSpecialty, stuMajorDegree, stuDiplomaNum, stuPublicationDate, stuIdentificationNum from stu_graduate_info where stuName=? and stuDiplomaNum=? and stuPublicationDate=?";
-		Object[] args = { stu.getStuName(), stu.getStuDiplomaNum(), stu.getStuPublicationDate() };
+		String sql = "select stuName, stuGender, stuBrithday, stuSpecialty, stuMajorDegree, stuMajorDegreeCertNum, stuPublicationDate, stuIdentificationNum from stu_graduate_info where stuName=? and stuMajorDegreeCertNum=? and stuPublicationDate=?";
+		Object[] args = { stu.getStuName(), stu.getStuMajorDegreeCertNum(), stu.getStuPublicationDate() };
 		try {
 			return jdbcTemplate.queryForObject(sql, args, new AuthStuRowMapper());
 		} catch (Exception e) {
@@ -71,7 +71,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 
 			stu.setStuName(rs.getString("stuName"));
 			stu.setStuMajorDegree(rs.getString("stuMajorDegree"));
-			stu.setStuDiplomaNum(rs.getString("stuDiplomaNum"));
+			stu.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
 			stu.setStuPublicationDate(rs.getDate("stuPublicationDate"));
 			stu.setStuGender(rs.getString("stuGender"));
 			stu.setStuBrithday(rs.getDate("stuBrithday"));

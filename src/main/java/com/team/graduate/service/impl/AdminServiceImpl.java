@@ -1,10 +1,14 @@
 package com.team.graduate.service.impl;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.team.graduate.common.excel.ExcelConverter;
 import com.team.graduate.common.excel.StuGraduateInfoExcelMapper;
+import com.team.graduate.controller.AdminController;
 import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,6 +21,7 @@ import com.team.graduate.model.Admin;
 import com.team.graduate.model.Log;
 import com.team.graduate.service.AdminService;
 import com.team.graduate.repository.AdminRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -30,11 +35,28 @@ public class AdminServiceImpl implements AdminService {
 		return repository.select(admin);
 	}
 
-	public void importData(File file) {
+	@Transactional
+	public Map<String, List<StuGraduateInfo>> importData(File file) {
 		List<StuGraduateInfo> importStudents = converter.readFromExcel(file, 1, new StuGraduateInfoExcelMapper());
+		List<StuGraduateInfo> errorData = new ArrayList<StuGraduateInfo>();
 
-//		TODO if data is regal
-		System.out.println();
+		for (StuGraduateInfo info : importStudents) {
+			if (info.isLegalImportData()) {
+				repository.insert(info);
+			} else {
+				errorData.add(info);
+			}
+		}
+
+		Map<String, List<StuGraduateInfo>> map = new HashMap<String, List<StuGraduateInfo>>();
+
+		if (errorData.size() > 0) {
+			map.put(AdminController.IMPORT_DATA_ERROR_DATA_RESULT, errorData);
+		} else {
+			map.put(AdminController.IMPORT_DATA_RIGHT_DATA_RESULT, importStudents);
+		}
+
+		return map;
 	}
 
 

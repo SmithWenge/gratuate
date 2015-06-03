@@ -78,7 +78,6 @@
 	</beans:bean>
 	<!-- 配置扫描注解的base package -->
 	<context:component-scan base-package="com.team.graduate" />
-    <tx:annotation-driven />
 
     <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
     <beans:bean id="mappingJacksonHttpMessageConverter"
@@ -112,4 +111,11 @@
         <beans:property name="maxUploadSize" value="104857600" />
         <beans:property name="maxInMemorySize" value="40960" />
     </beans:bean>
+
+    <!-- init transaction -->
+    <beans:bean id="transactionManager"
+                class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <beans:property name="dataSource" ref="dataSource" />
+    </beans:bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans:beans>

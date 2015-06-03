@@ -1,6 +1,7 @@
 package com.team.graduate.repository;
 
 import com.team.graduate.model.Admin;
+import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,4 +16,5 @@ import java.sql.SQLException;
 
 public interface AdminRepository {
     public Admin select(Admin admin);
+    public void insert(StuGraduateInfo info);
 }

@@ -3,9 +3,11 @@ package com.team.graduate.controller;
 import com.google.code.kaptcha.Constants;
 import com.team.graduate.common.util.MD5Util;
 import com.team.graduate.model.Admin;
+import com.team.graduate.model.StuGraduateInfo;
 import com.team.graduate.service.AdminService;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * CopyRight (c) 2015 : 56Team
@@ -36,7 +41,11 @@ import java.io.*;
 public class AdminController {
     public static final String ADMIN_LOGIN_TAG = "adminLogin";
     public static final String UPLOAD_EXCEL_FILE_NAME ="targetFile";
+    public static final String IMPORT_DATA_ERROR_DATA_RESULT = "errorImportData";
+    public static final String IMPORT_DATA_RIGHT_DATA_RESULT = "rightImportData";
+
     @Autowired
+    @Qualifier("adminServiceImpl")
     private AdminService service;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -76,9 +85,13 @@ public class AdminController {
 
         if (null == importFile) return new ModelAndView("redirect:/router/admin.action");
 
-        service.importData(importFile);
-
-        return new ModelAndView();
+        Map<String, List<StuGraduateInfo>> result = service.importData(importFile);
+        List<StuGraduateInfo> data = result.get(IMPORT_DATA_ERROR_DATA_RESULT);
+        if ( data != null) {
+            return new ModelAndView("admin/error/importError", "data", data);
+        } else {
+            return new ModelAndView("admin/result/success", "data", result.get(IMPORT_DATA_RIGHT_DATA_RESULT).size());
+        }
     }
 
     private File save(@RequestParam("file") MultipartFile file, HttpServletRequest request) {

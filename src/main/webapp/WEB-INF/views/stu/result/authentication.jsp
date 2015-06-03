@@ -13,7 +13,7 @@
 			</tr>
 			<tr>
 				<td>学位证号：</td>
-				<td>${stu.stuDiplomaNum}</td>
+				<td>${stu.stuMajorDegreeCertNum}</td>
 			</tr>
 			<tr>
 				<td>发证日期：</td>

@@ -13,8 +13,8 @@
 					</tr>
 					<tr>
 						<td>学位证号：</td>
-						<td><input type="text" name="stuDiplomaNum"
-							id="stuDiplomaNum" /></td>
+						<td><input type="text" name="stuMajorDegreeCertNum"
+							id="stuMajorDegreeCertNum" /></td>
 					</tr>
 					<tr>
 						<td>发证日期：</td>
@@ -72,7 +72,7 @@
 							minlength : 2,
 							maxlength : 10
 						},
-						stuDiplomaNum : {
+						stuMajorDegreeCertNum : {
 							required : true,
 							idLength : 16
 						},
@@ -99,7 +99,7 @@
 							minlength : "您的姓名的字数需要在2到10之间",
 							maxlength : "您的姓名的字数需要在2到10之间"
 						},
-						stuDiplomaNum : {
+						stuMajorDegreeCertNum : {
 							required : "请填写您的学位证号",
 							idLength : "您的学位证号长度应该是16位"
 						},

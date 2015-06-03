@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.team.graduate.model.Admin;
+import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,6 +40,24 @@ public class AdminRepositoryImpl implements AdminRepository {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public void insert(StuGraduateInfo info) {
+        String sql = "INSERT INTO stu_graduate_info (id, stuName, stuEnName, stuNumber, stuGender, stuBrithday," +
+                " stuEnrollment, stuGraduation, stuAcademy, stuSpecialty, stuSpecialtyMajor, stuClass, stuPicture," +
+                " stuGraduationCardNum, stuMajorDegreeCertNum, stuMajorDegree, stuDoubleMajorDegree, stuDoubleMajorDegreeNum, " +
+                "stuMinorDegree, stuMinorDegreeNum, stuIdentificationNum, stuPostgraduateNum, stuCompletionNum," +
+                " stuLeaveType, stuPublicationDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
+                " ?, ?, ?, ?, ?, ?, ?, ?)";
+        Object[] args = { info.getId(), info.getStuName(), info.getStuEnName(), info.getStuNumber(), info.getStuGender(),
+                info.getStuBrithday(), info.getStuEnrollment(), info.getStuGraduation(), info.getStuAcademy(),
+                info.getStuSpecialty(), info.getStuSpecialtyMajor(), info.getStuClass(), info.getStuPicture(),
+                info.getStuGraduationCardNum(), info.getStuMajorDegreeCertNum(), info.getStuMajorDegree(), info.getStuDoubleMajorDegree(),
+                info.getStuDoubleMajorDegreeNum(), info.getStuMinorDegree(), info.getStuMinorDegreeNum(),
+                info.getStuIdentificationNum(), info.getStuPostgraduateNum(), info.getStuCompletionNum(),
+                info.getStuLeaveType(), info.getStuPublicationDate() };
+
+        jdbcTemplate.update(sql, args);
     }
 
     private class LogRowMapperParam implements ParameterizedRowMapper<Log> {
