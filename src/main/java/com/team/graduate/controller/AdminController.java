@@ -43,6 +43,7 @@ public class AdminController {
     public static final String UPLOAD_EXCEL_FILE_NAME ="targetFile";
     public static final String IMPORT_DATA_ERROR_DATA_RESULT = "errorImportData";
     public static final String IMPORT_DATA_RIGHT_DATA_RESULT = "rightImportData";
+    public static final String IMPORT_DATA_REPEAT_DATA_RESULT = "repeatImportData";
 
     @Autowired
     @Qualifier("adminServiceImpl")
@@ -86,11 +87,20 @@ public class AdminController {
         if (null == importFile) return new ModelAndView("redirect:/router/admin.action");
 
         Map<String, List<StuGraduateInfo>> result = service.importData(importFile);
-        List<StuGraduateInfo> data = result.get(IMPORT_DATA_ERROR_DATA_RESULT);
-        if ( data != null) {
-            return new ModelAndView("admin/error/importError", "data", data);
+
+        List<StuGraduateInfo> errorData = result.get(IMPORT_DATA_ERROR_DATA_RESULT);
+        List<StuGraduateInfo> repeatData = result.get(IMPORT_DATA_REPEAT_DATA_RESULT);
+        List<StuGraduateInfo> rightData =  result.get(IMPORT_DATA_RIGHT_DATA_RESULT);
+
+        if ( errorData.size() > 0 || repeatData.size() > 0) {
+            ModelAndView mav = new ModelAndView("admin/error/importError");
+            mav.addObject("errorData", errorData);
+            mav.addObject("repeatData", repeatData);
+            mav.addObject("rightData", rightData.size());
+
+            return mav;
         } else {
-            return new ModelAndView("admin/result/success", "data", result.get(IMPORT_DATA_RIGHT_DATA_RESULT).size());
+            return new ModelAndView("admin/result/success", "data", rightData.size());
         }
     }
 

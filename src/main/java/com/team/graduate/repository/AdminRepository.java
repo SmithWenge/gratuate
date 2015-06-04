@@ -17,4 +17,5 @@ import java.sql.SQLException;
 public interface AdminRepository {
     public Admin select(Admin admin);
     public void insert(StuGraduateInfo info);
+    public boolean selectDiff(StuGraduateInfo info);
 }

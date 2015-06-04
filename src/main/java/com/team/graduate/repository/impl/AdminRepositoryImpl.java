@@ -60,6 +60,13 @@ public class AdminRepositoryImpl implements AdminRepository {
         jdbcTemplate.update(sql, args);
     }
 
+    public boolean selectDiff(StuGraduateInfo info) {
+        String sql = "SELECT count(1) FROM stu_graduate_info WHERE stuMajorDegreeCertNum = ?";
+        Object[] args = { info.getStuMajorDegreeCertNum() };
+
+        return jdbcTemplate.queryForObject(sql, args, Integer.class) > 0 ? true : false;
+    }
+
     private class LogRowMapperParam implements ParameterizedRowMapper<Log> {
 
         public Log mapRow(ResultSet rs, int rowNum) throws SQLException {

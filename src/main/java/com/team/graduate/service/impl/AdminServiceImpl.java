@@ -39,10 +39,17 @@ public class AdminServiceImpl implements AdminService {
 	public Map<String, List<StuGraduateInfo>> importData(File file) {
 		List<StuGraduateInfo> importStudents = converter.readFromExcel(file, 1, new StuGraduateInfoExcelMapper());
 		List<StuGraduateInfo> errorData = new ArrayList<StuGraduateInfo>();
+		List<StuGraduateInfo> repeatData = new ArrayList<StuGraduateInfo>();
+		List<StuGraduateInfo> rightData = new ArrayList<StuGraduateInfo>();
 
 		for (StuGraduateInfo info : importStudents) {
 			if (info.isLegalImportData()) {
-				repository.insert(info);
+				if (repository.selectDiff(info)) {
+					repeatData.add(info);
+				} else {
+					repository.insert(info);
+					rightData.add(info);
+				}
 			} else {
 				errorData.add(info);
 			}
@@ -50,11 +57,18 @@ public class AdminServiceImpl implements AdminService {
 
 		Map<String, List<StuGraduateInfo>> map = new HashMap<String, List<StuGraduateInfo>>();
 
-		if (errorData.size() > 0) {
+		if (errorData.size() > 0 || repeatData.size() > 0) {
 			map.put(AdminController.IMPORT_DATA_ERROR_DATA_RESULT, errorData);
-		} else {
-			map.put(AdminController.IMPORT_DATA_RIGHT_DATA_RESULT, importStudents);
+			map.put(AdminController.IMPORT_DATA_REPEAT_DATA_RESULT, repeatData);
 		}
+
+		map.put(AdminController.IMPORT_DATA_RIGHT_DATA_RESULT, rightData);
+
+//		reduce heap size
+		importStudents = null;
+		rightData = null;
+		errorData = null;
+		repeatData = null;
 
 		return map;
 	}
