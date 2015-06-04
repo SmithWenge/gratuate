@@ -189,7 +189,7 @@ public class StuGraduateInfo {
 
 //	验证方法
 	public boolean isLegal() {
-		return this.getStuName() != null && this.getStuIdentificationNum().length() == 21;
+		return this.getStuName() != null && this.getStuIdentificationNum().length() == 18;
 	}
 
 //	认证验证方法

@@ -44,7 +44,7 @@
         <ul class="navY">
           <li><a href="<%=basePath%>index.jsp">首页</a></li>
           <li><a href="${reqBaseURL}/router/search.action">查询</a></li>
-          <li><a href="<%=basePath%>/router/authentication.action">认证</a></li>
+          <li><a href="${reqBaseURL}/router/authentication.action">认证</a></li>
           <br />
           <li><a href="#">联系方式</a></li>
           <li><a href="#">关于我们</a></li>

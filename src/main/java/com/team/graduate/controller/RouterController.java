@@ -66,6 +66,11 @@ public class RouterController {
                       @PathVariable("name") String name) throws IOException {
         response.setContentType("image/jpeg");
         InputStream in = context.getResourceAsStream("/WEB-INF/images/" + name + ".jpg");
+
+        if (in == null) {
+            in = context.getResourceAsStream("/WEB-INF/images/default.jpg");
+        }
+
         IOUtils.copy(in, response.getOutputStream());
     }
 
