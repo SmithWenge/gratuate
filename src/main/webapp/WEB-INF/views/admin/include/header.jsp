@@ -26,8 +26,8 @@ pageEncoding="UTF-8"%>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="#">倒入新数据</a></li>
-              <li><a href="#">查看日志</a></li>
+              <li><a href="${reqBaseURL}/router/admin.action">导入数据</a></li>
+              <li><a href="${reqBaseURL}/router/image.action">导入图片</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a>管理员: ${sessionScope.adminLogin.username}</a></li>

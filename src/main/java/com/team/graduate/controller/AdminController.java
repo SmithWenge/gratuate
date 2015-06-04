@@ -9,7 +9,6 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,6 +43,8 @@ public class AdminController {
     public static final String IMPORT_DATA_ERROR_DATA_RESULT = "errorImportData";
     public static final String IMPORT_DATA_RIGHT_DATA_RESULT = "rightImportData";
     public static final String IMPORT_DATA_REPEAT_DATA_RESULT = "repeatImportData";
+
+    private static final String IMPORT_IMAGE_FORMAT = ".jpg";
 
     @Autowired
     @Qualifier("adminServiceImpl")
@@ -173,5 +174,60 @@ public class AdminController {
         }
 
         return null;
+    }
+
+    @RequestMapping(value = "/image/import", method = RequestMethod.POST)
+    public ModelAndView processImageImport(@RequestParam("image") MultipartFile[] files, HttpServletRequest request) {
+        if (null == request.getSession().getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView("redirect:/router/admin.action");
+
+        String targetPath = request.getSession().getServletContext().getRealPath("/WEB-INF/images/");
+
+        ArrayList<String> rightImages = new ArrayList<String>();
+        ArrayList<String> repeatImages = new ArrayList<String>();
+        ArrayList<String> errorImages = new ArrayList<String>();
+
+        for (MultipartFile file : files) {
+            String sourceFileName = file.getOriginalFilename();
+            String idNum = sourceFileName.substring(0, sourceFileName.indexOf("."));
+            String subName = sourceFileName.substring(sourceFileName.lastIndexOf("."));
+
+            if (service.isRightImage(idNum) && subName.equals(IMPORT_IMAGE_FORMAT)) {
+                String prefixName = MD5Util.getMD5String(idNum);
+                String newName = prefixName + subName;
+                File targetFile = new File(targetPath, newName);
+
+                if (targetFile.exists()) {
+                    repeatImages.add(sourceFileName);
+                    continue;
+                }
+
+                try {
+                    file.transferTo(targetFile);
+
+                    rightImages.add(sourceFileName);
+                } catch (IOException e) {
+                    errorImages.add(sourceFileName);
+                }
+            } else {
+                errorImages.add(sourceFileName);
+            }
+        }
+
+        if (errorImages.size() > 0 || repeatImages.size() > 0) {
+            ModelAndView mav = new ModelAndView("admin/image/error/importError");
+            mav.addObject("rightImages", rightImages.size());
+            mav.addObject("errorImages", errorImages);
+            mav.addObject("repeatImages", repeatImages);
+
+            return mav;
+        } else {
+            return new ModelAndView("admin/image/success", "rightImages", rightImages.size());
+        }
+    }
+
+    @RequestMapping(value = "/image/import", method = RequestMethod.GET)
+    public String processImageImportGet() {
+        return "redirect:/router/image.action";
     }
 }

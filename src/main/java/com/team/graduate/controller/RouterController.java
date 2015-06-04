@@ -82,4 +82,13 @@ public class RouterController {
 
         return "admin/login";
     }
+
+    @RequestMapping("/image")
+    public String image(HttpSession session) {
+        if (null != session.getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return "admin/image/import";
+        }
+
+        return "admin/login";
+    }
 }

@@ -11,14 +11,9 @@ import com.team.graduate.common.excel.StuGraduateInfoExcelMapper;
 import com.team.graduate.controller.AdminController;
 import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.team.graduate.dao.AdminLoginDaoImpl;
 import com.team.graduate.model.Admin;
-import com.team.graduate.model.Log;
 import com.team.graduate.service.AdminService;
 import com.team.graduate.repository.AdminRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,6 +66,11 @@ public class AdminServiceImpl implements AdminService {
 		repeatData = null;
 
 		return map;
+	}
+
+	public boolean isRightImage(String idNum) {
+
+		return repository.selectDiffImageName(idNum);
 	}
 
 

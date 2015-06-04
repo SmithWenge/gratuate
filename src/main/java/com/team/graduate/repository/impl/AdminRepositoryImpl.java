@@ -13,23 +13,12 @@ import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.team.graduate.framework.RepositoryUtil;
-import com.team.graduate.model.Log;
 import com.team.graduate.repository.AdminRepository;
 
 @Repository
 public class AdminRepositoryImpl implements AdminRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    @Autowired
-    private RepositoryUtil<Log> repository;
-
-    public Page<Log> selectWithPage(Pageable pageable) {
-        String sql = "SELECT logId, createDate, thread, `level`, class, message FROM stu_graduate_log4j";
-        Object[] args = {};
-        Page<Log> page = repository.select4Page(sql, pageable, args, new LogRowMapperParam());
-
-        return page;
-    }
 
     public Admin select(Admin admin) {
         String sql = "SELECT username FROM stu_graduate_loginuser WHERE username = ? AND password = ?";
@@ -62,18 +51,11 @@ public class AdminRepositoryImpl implements AdminRepository {
         return jdbcTemplate.queryForObject(sql, args, Integer.class) > 0 ? true : false;
     }
 
-    private class LogRowMapperParam implements ParameterizedRowMapper<Log> {
+    public boolean selectDiffImageName(String idNum) {
+        String sql = "SELECT count(1) FROM stu_graduate_info WHERE stuIdentificationNum = ?";
+        Object[] args = { idNum };
 
-        public Log mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Log log = new Log();
-            log.setLogId(rs.getInt("logId"));
-			log.setClazz(rs.getString("class"));
-			log.setCreateDate(rs.getDate("createDate"));
-			log.setLevel(rs.getString("level"));
-			log.setMessage(rs.getString("message"));
-			log.setThread(rs.getString("thread"));
-            return log;
-        }
+        return jdbcTemplate.queryForObject(sql, args, Integer.class) > 0 ? true : false;
     }
 
     private class AdminRowMapper implements ParameterizedRowMapper<Admin> {
