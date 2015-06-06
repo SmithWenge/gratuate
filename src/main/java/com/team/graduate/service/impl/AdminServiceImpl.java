@@ -73,6 +73,10 @@ public class AdminServiceImpl implements AdminService {
 		return repository.selectDiffImageName(idNum);
 	}
 
+	public void addNewStudent(StuGraduateInfo info) {
+		repository.insert(info);
+	}
+
 
 //	public Admin loginAdmin(Admin admin) {
 //		if (admin != null) {

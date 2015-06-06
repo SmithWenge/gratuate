@@ -22,6 +22,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * CopyRight (c) 2015 : 56Team
@@ -45,6 +46,7 @@ public class AdminController {
     public static final String IMPORT_DATA_REPEAT_DATA_RESULT = "repeatImportData";
 
     private static final String IMPORT_IMAGE_FORMAT = ".jpg";
+    public static final String REDIRECT_ROUTER_ADMIN_ACTION = "redirect:/router/admin.action";
 
     @Autowired
     @Qualifier("adminServiceImpl")
@@ -53,7 +55,7 @@ public class AdminController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView adminLogin(Admin admin, HttpSession session, @RequestParam("authCode") String authCode) {
         if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
-            return new ModelAndView("redirect:/router/admin.action");
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
 
@@ -68,24 +70,24 @@ public class AdminController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String adminLoginGet(Admin admin, HttpSession session) {
-        return "redirect:/router/admin.action";
+        return REDIRECT_ROUTER_ADMIN_ACTION;
     }
 
     @RequestMapping(value = "logout", method = RequestMethod.GET)
     public String adminLogout(HttpSession session) {
         session.removeAttribute(ADMIN_LOGIN_TAG);
 
-        return "redirect:/router/admin.action";
+        return REDIRECT_ROUTER_ADMIN_ACTION;
     }
 
     @RequestMapping(value = "/import", method = RequestMethod.POST)
     public ModelAndView processDataImport(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
         if (null == request.getSession().getAttribute(ADMIN_LOGIN_TAG))
-            return new ModelAndView("redirect:/router/admin.action");
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         File importFile = save(file, request);
 
-        if (null == importFile) return new ModelAndView("redirect:/router/admin.action");
+        if (null == importFile) return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         Map<String, List<StuGraduateInfo>> result = service.importData(importFile);
 
@@ -136,12 +138,12 @@ public class AdminController {
 
     @RequestMapping(value = "/import", method = RequestMethod.GET)
     public String processDataImport() {
-        return "redirect:/router/admin.action";
+        return REDIRECT_ROUTER_ADMIN_ACTION;
     }
 
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public String downloadTemplate(HttpServletResponse response, HttpSession session) {
-        if (null == session.getAttribute(ADMIN_LOGIN_TAG)) return "redirect:/router/admin.action";
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG)) return REDIRECT_ROUTER_ADMIN_ACTION;
 
         String templatePath = session.getServletContext().getRealPath("/") + "WEB-INF/data/template/Template.xls";
         try {
@@ -179,7 +181,7 @@ public class AdminController {
     @RequestMapping(value = "/image/import", method = RequestMethod.POST)
     public ModelAndView processImageImport(@RequestParam("image") MultipartFile[] files, HttpServletRequest request) {
         if (null == request.getSession().getAttribute(ADMIN_LOGIN_TAG))
-            return new ModelAndView("redirect:/router/admin.action");
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         String targetPath = request.getSession().getServletContext().getRealPath("/WEB-INF/images/");
 
@@ -229,5 +231,67 @@ public class AdminController {
     @RequestMapping(value = "/image/import", method = RequestMethod.GET)
     public String processImageImportGet() {
         return "redirect:/router/image.action";
+    }
+
+    @RequestMapping(value = "/single/add", method = RequestMethod.POST)
+    public ModelAndView singleAdd(StuGraduateInfo info, @RequestParam("file") MultipartFile file, 
+                                  HttpSession session, @RequestParam("authCode") String authCode) {
+        if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
+            return new ModelAndView("redirect:/router/single/add.action");
+
+        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (!info.isLegalImportData() || file == null)
+            return new ModelAndView("redirect:/router/single/add.action");
+
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        String realFileName = saveSingleImage(info, file, session);
+        if (null == realFileName) {
+            return new ModelAndView("redirect:/router/single/add.action");
+        }
+
+        info.setId(UUID.randomUUID().toString());
+
+        service.addNewStudent(info);
+
+        ModelAndView mav = new ModelAndView("admin/single/query");
+        mav.addObject("stu", info);
+        mav.addObject("realFileName", realFileName);
+
+        return mav;
+    }
+
+    private String saveSingleImage(StuGraduateInfo info, @RequestParam("file") MultipartFile file,
+                                   HttpSession session) {
+        String targetPath = session.getServletContext().getRealPath("/WEB-INF/images/");
+        String sourceFileName = file.getOriginalFilename();
+        String idNum = sourceFileName.substring(0, sourceFileName.indexOf("."));
+        String subName = sourceFileName.substring(sourceFileName.lastIndexOf("."));
+
+        if (idNum.equals(info.getStuIdentificationNum()) && subName.equals(IMPORT_IMAGE_FORMAT)) {
+            String prefixName = MD5Util.getMD5String(idNum);
+            String newName = prefixName + subName;
+            File targetFile = new File(targetPath, newName);
+
+            if (targetFile.exists()) {
+                targetFile.delete();
+            }
+
+            try {
+                file.transferTo(targetFile);
+                return prefixName;
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        return null;
+    }
+
+    @RequestMapping(value = "/single/add", method = RequestMethod.GET)
+    public String singleAddGet() {
+        return "redirect:/router/single/add.action";
     }
 }

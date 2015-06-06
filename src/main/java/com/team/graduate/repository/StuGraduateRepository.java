@@ -20,4 +20,6 @@ public interface StuGraduateRepository {
     public List<StuGraduateInfo> selectNameAndIdentificationNum(StuGraduateInfo info);
     public StuGraduateInfo authNameAndDegreeNumAndPubDate(StuGraduateInfo stu);
     public List<Date> getDiffDate();
+
+    int selectKV(String key, String value);
 }

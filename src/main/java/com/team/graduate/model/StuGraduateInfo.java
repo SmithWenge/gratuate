@@ -17,8 +17,8 @@ public class StuGraduateInfo {
 	private String stuClass;	//班级
 	private String stuPicture;	//图片
 	private String stuGraduationCardNum;	//毕业证编号
-	private String stuMajorDegreeCertNum;	//主修学位证编号
-	private String stuMajorDegree;			//主修学位
+	private String stuMajorDegreeCertNum;	//学位证编号
+	private String stuMajorDegree;			//学位
 	private String stuDoubleMajorDegree;	//第二学位
 	private String stuDoubleMajorDegreeNum;	//第二学位证编号
 	private String stuMinorDegree;			//辅修学位

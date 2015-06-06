@@ -13,4 +13,6 @@ public interface AdminService {
 	public Map<String, List<StuGraduateInfo>> importData(File file);
 
 	boolean isRightImage(String idNum);
+
+	void addNewStudent(StuGraduateInfo info);
 }

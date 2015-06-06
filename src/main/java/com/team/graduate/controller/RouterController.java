@@ -33,6 +33,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/router")
 public class RouterController {
+    public static final String ADMIN_LOGIN = "admin/login";
     @Autowired
     ServletContext context;
 
@@ -80,7 +81,7 @@ public class RouterController {
             return "admin/result/importIndex";
         }
 
-        return "admin/login";
+        return ADMIN_LOGIN;
     }
 
     @RequestMapping("/image")
@@ -89,6 +90,24 @@ public class RouterController {
             return "admin/image/import";
         }
 
-        return "admin/login";
+        return ADMIN_LOGIN;
+    }
+
+    @RequestMapping("/single")
+     public String single(HttpSession session) {
+        if (null != session.getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return "admin/single/index";
+        }
+
+        return ADMIN_LOGIN;
+    }
+
+    @RequestMapping(value = "/single/add", method = RequestMethod.GET)
+    public String singleAdd(HttpServletRequest request) {
+        if (null == request.getSession().getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return ADMIN_LOGIN;
+        } else {
+            return "admin/single/add";
+        }
     }
 }

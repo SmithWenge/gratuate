@@ -23,7 +23,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	public List<StuGraduateInfo> selectNameAndIdentificationNum(StuGraduateInfo stu) {
-		String sql = "select stuName,stuGraduationCardNum, stuMajorDegree, stuSpecialty, stuIdentificationNum from stu_graduate_info where stuName=? and stuIdentificationNum=?";
+		String sql = "select stuName,stuGraduationCardNum, stuMajorDegree, stuMajorDegreeCertNum, stuSpecialty, stuIdentificationNum from stu_graduate_info where stuName=? and stuIdentificationNum=?";
 		Object[] args = { stu.getStuName(), stu.getStuIdentificationNum() };
 
 		try {
@@ -49,6 +49,13 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 		return jdbcTemplate.queryForList(sql, Date.class);
 	}
 
+	public int selectKV(String key, String value) {
+		String sql = "SELECT count(1) FROM stu_graduate_info WHERE " + key + " = ?";
+		Object[] args = { value };
+
+		return jdbcTemplate.queryForObject(sql, args, Integer.class);
+	}
+
 	private class StuRowMapper implements RowMapper<StuGraduateInfo> {
 		public StuGraduateInfo mapRow(ResultSet rs, int rowNum)
 				throws SQLException {
@@ -58,6 +65,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 			stu.setStuIdentificationNum(rs.getString("stuIdentificationNum"));
 			stu.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
 			stu.setStuMajorDegree(rs.getString("stuMajorDegree"));
+			stu.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
 			stu.setStuSpecialty(rs.getString("stuSpecialty"));
 			
 			return stu;

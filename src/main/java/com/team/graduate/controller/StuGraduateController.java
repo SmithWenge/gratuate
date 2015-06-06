@@ -3,12 +3,10 @@ package com.team.graduate.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.google.code.kaptcha.Constants;
+import com.team.graduate.common.constant.WebConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.team.graduate.model.StuGraduateInfo;
@@ -55,7 +53,7 @@ public class StuGraduateController {
 		return mav;
 	}
 
-	@RequestMapping(value = "search", method = RequestMethod.GET)
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String searchGet() {
 		return SEARCH_REDIRECT_LOCATION;
 	}
@@ -93,5 +91,29 @@ public class StuGraduateController {
 	@RequestMapping(value = "/authentication", method = RequestMethod.GET)
 	public String authenticationGet() {
 		return "stu/authentication";
+	}
+
+	@ResponseBody
+	@RequestMapping("/isStuNumberExist")
+	public boolean isStuNumberExist(@RequestParam("stuNumber") String stuNumber) {
+		return  service.isExist(WebConstant.STU_NUMBER, stuNumber);
+	}
+
+	@ResponseBody
+	@RequestMapping("/isStuGraduationCardNumExist")
+	public boolean isStuGraduationCardNumExist(@RequestParam("stuGraduationCardNum") String stuGraduationCardNum) {
+		return  service.isExist(WebConstant.STU_GRADUATION_CARD_NUM, stuGraduationCardNum);
+	}
+
+	@ResponseBody
+	@RequestMapping("/isStuMajorDegreeCertNumExist")
+	public boolean isStuMajorDegreeCertNumExist(@RequestParam("stuMajorDegreeCertNum") String stuMajorDegreeCertNum) {
+		return  service.isExist(WebConstant.STU_MAJOR_DEGREE_CERT_NUM, stuMajorDegreeCertNum);
+	}
+
+	@ResponseBody
+	@RequestMapping("/isStuIdentificationNumExist")
+	public boolean isStuIdentificationNumExist(@RequestParam("stuIdentificationNum") String stuIdentificationNum) {
+		return  service.isExist(WebConstant.STU_IDENTIFICATION_NUM, stuIdentificationNum);
 	}
 }

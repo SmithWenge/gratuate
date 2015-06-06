@@ -11,6 +11,13 @@ pageEncoding="UTF-8"%>
   <script type="text/javascript" src="${reqBaseURL}/resource/jquery-2.1.0.js"></script>
   <script src="${reqBaseURL}/resource/bootstrap/js/bootstrap.js" type="text/javascript"></script>
   <script src="${reqBaseURL}/resource/jquery.validate.js" type="text/javascript"></script>
+
+  <style type="text/css">
+    img {
+      max-width:220px;
+      _width:expression(this.width > 22 ? "220px" : this.width);
+    }
+  </style>
 </head>
 <body>
 <div class="col-md-2"></div>
@@ -28,6 +35,7 @@ pageEncoding="UTF-8"%>
             <ul class="nav navbar-nav">
               <li><a href="${reqBaseURL}/router/admin.action">导入数据</a></li>
               <li><a href="${reqBaseURL}/router/image.action">导入图片</a></li>
+              <li><a href="${reqBaseURL}/router/single.action">单条数据</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a>管理员: ${sessionScope.adminLogin.username}</a></li>

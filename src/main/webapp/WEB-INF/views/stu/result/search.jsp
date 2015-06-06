@@ -39,7 +39,7 @@
 					<td id="stuSpecialty"></td>
 				</tr>
 				<tr>
-					<td>${stu.stuGraduationCardNum}</td>
+					<td>${stu.stuMajorDegreeCertNum}</td>
 					<td>${stu.stuMajorDegree}</td>
 					<td>${stu.stuSpecialty}</td>
 				</tr>
