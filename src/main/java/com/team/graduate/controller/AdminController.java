@@ -1,6 +1,7 @@
 package com.team.graduate.controller;
 
 import com.google.code.kaptcha.Constants;
+import com.team.graduate.common.constant.WebConstant;
 import com.team.graduate.common.util.MD5Util;
 import com.team.graduate.model.Admin;
 import com.team.graduate.model.StuGraduateInfo;
@@ -9,6 +10,7 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -256,7 +258,7 @@ public class AdminController {
 
         service.addNewStudent(info);
 
-        ModelAndView mav = new ModelAndView("admin/single/query");
+        ModelAndView mav = new ModelAndView("admin/single/information");
         mav.addObject("stu", info);
         mav.addObject("realFileName", realFileName);
 
@@ -293,5 +295,93 @@ public class AdminController {
     @RequestMapping(value = "/single/add", method = RequestMethod.GET)
     public String singleAddGet() {
         return "redirect:/router/single/add.action";
+    }
+
+    @RequestMapping(value = "/single/query", method = RequestMethod.POST)
+    public ModelAndView queryByStuNumber(@RequestParam("stuNumber") String stuNumber, HttpSession session,
+                                         @RequestParam("authCode") String authCode) {
+        if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
+            return new ModelAndView("redirect:/router/single.action");
+
+        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        StuGraduateInfo info = service.queryKV(WebConstant.STU_NUMBER, stuNumber);
+
+        if (info == null) {
+            return new ModelAndView("redirect:/router/single.action", "warning", "没有所查学号的学生");
+        }
+
+        String realFileName = MD5Util.getMD5String(info.getStuIdentificationNum());
+
+        ModelAndView mav = new ModelAndView("admin/single/detail");
+        mav.addObject("stu", info);
+        mav.addObject("realFileName", realFileName);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/single/query", method = RequestMethod.GET)
+    public String queryByStuNumber(HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return REDIRECT_ROUTER_ADMIN_ACTION;
+
+        return "redirect:/router/single.action";
+    }
+
+    @RequestMapping("/single/queryById/{id}")
+    public ModelAndView queryForUpdate(@PathVariable("id") String stuId, HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        StuGraduateInfo info = service.query4Update(stuId);
+
+        String realFileName = MD5Util.getMD5String(info.getStuIdentificationNum());
+
+        ModelAndView mav = new ModelAndView("admin/single/modify");
+        mav.addObject("stu", info);
+        mav.addObject("realFileName", realFileName);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/single/update", method = RequestMethod.POST)
+    public ModelAndView updateInformation(StuGraduateInfo info, HttpSession session,
+                                          @RequestParam("file") MultipartFile file,
+                                          @RequestParam("authCode") String authCode) {
+        if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
+            return new ModelAndView("redirect:/router/single/add.action");
+
+        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (!info.isLegalImportData() || file == null)
+            return new ModelAndView("redirect:/router/single/add.action");
+
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        String realFileName = saveSingleImage(info, file, session);
+
+        if (null == realFileName) {
+            return new ModelAndView("redirect:/router/single/add.action");
+        }
+
+        StuGraduateInfo newInfo = service.updateGraduate(info);
+
+        ModelAndView mav = new ModelAndView("admin/single/information");
+        mav.addObject("stu", newInfo);
+        mav.addObject("realFileName", realFileName);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/single/update", method = RequestMethod.GET)
+    public String updateInformation(HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return REDIRECT_ROUTER_ADMIN_ACTION;
+
+        return "admin/single/index";
     }
 }

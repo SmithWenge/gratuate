@@ -58,6 +58,47 @@ public class AdminRepositoryImpl implements AdminRepository {
         return jdbcTemplate.queryForObject(sql, args, Integer.class) > 0 ? true : false;
     }
 
+    public StuGraduateInfo selectInfo(String key, String value) {
+        String sql = "SELECT id, stuName, stuNumber, stuGender, stuBrithday, stuEnrollment, stuGraduation," +
+                " stuSpecialty, stuGraduationCardNum, stuMajorDegreeCertNum, stuMajorDegree," +
+                " stuIdentificationNum, stuPublicationDate FROM stu_graduate_info WHERE " + key + " = ?";
+        Object[] args = { value };
+
+        try {
+            return jdbcTemplate.queryForObject(sql, args, new StuGraduateInfoRowMapper());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public StuGraduateInfo queryByStuId(String stuId) {
+        String sql = "SELECT id, stuName, stuNumber, stuGender, stuBrithday, stuEnrollment, stuGraduation," +
+                " stuSpecialty, stuGraduationCardNum, stuMajorDegreeCertNum, stuMajorDegree," +
+                " stuIdentificationNum, stuPublicationDate FROM stu_graduate_info WHERE id = ?";
+        Object[] args = { stuId };
+
+        return jdbcTemplate.queryForObject(sql, args, new StuGraduateInfoRowMapper());
+    }
+
+    public StuGraduateInfo update(StuGraduateInfo info) {
+        String sql = "UPDATE stu_graduate_info set stuName = ?, stuNumber = ?, stuGender = ?," +
+                " stuBrithday = ?, stuEnrollment = ?, stuGraduation = ?, stuSpecialty = ?," +
+                " stuGraduationCardNum = ?, stuMajorDegreeCertNum = ?, stuMajorDegree = ?," +
+                " stuIdentificationNum = ?, stuPublicationDate = ? WHERE id = ?";
+        Object[] args = { info.getStuName(), info.getStuNumber(), info.getStuGender(), info.getStuBrithday(),
+                info.getStuEnrollment(), info.getStuGraduation(), info.getStuSpecialty(), info.getStuGraduationCardNum(),
+                info.getStuMajorDegreeCertNum(), info.getStuMajorDegree(), info.getStuIdentificationNum(),
+                info.getStuPublicationDate(), info.getId() };
+
+        int value = jdbcTemplate.update(sql, args);
+
+        if (value == 1) {
+            return queryByStuId(info.getId());
+        }
+
+        return null;
+    }
+
     private class AdminRowMapper implements ParameterizedRowMapper<Admin> {
 
         public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -66,6 +107,29 @@ public class AdminRepositoryImpl implements AdminRepository {
             admin.setUsername(rs.getString("username"));
 
             return admin;
+        }
+    }
+
+    private class StuGraduateInfoRowMapper implements ParameterizedRowMapper<StuGraduateInfo> {
+
+        public StuGraduateInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
+            StuGraduateInfo info = new StuGraduateInfo();
+
+            info.setId(rs.getString("id"));
+            info.setStuName(rs.getString("stuName"));
+            info.setStuNumber(rs.getString("stuNumber"));
+            info.setStuGender(rs.getString("stuGender"));
+            info.setStuBrithday(rs.getDate("stuBrithday"));
+            info.setStuEnrollment(rs.getDate("stuEnrollment"));
+            info.setStuGraduation(rs.getDate("stuGraduation"));
+            info.setStuSpecialty(rs.getString("stuSpecialty"));
+            info.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
+            info.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
+            info.setStuMajorDegree(rs.getString("stuMajorDegree"));
+            info.setStuIdentificationNum(rs.getString("stuIdentificationNum"));
+            info.setStuPublicationDate(rs.getDate("stuPublicationDate"));
+
+            return info;
         }
     }
 }

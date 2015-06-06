@@ -9,4 +9,10 @@ public interface AdminRepository {
     public boolean selectDiff(StuGraduateInfo info);
 
     boolean selectDiffImageName(String idNum);
+
+    StuGraduateInfo selectInfo(String key, String value);
+
+    StuGraduateInfo queryByStuId(String stuId);
+
+    StuGraduateInfo update(StuGraduateInfo info);
 }

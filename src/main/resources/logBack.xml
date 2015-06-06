@@ -1,6 +1,6 @@
 <configuration debug="true">
     <substitutionProperty name="logDir" value="logs" />
-    <substitutionProperty name="logName" value="join" />
+    <substitutionProperty name="logName" value="graduate" />
 
     <!-- Output to console -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

@@ -15,4 +15,10 @@ public interface AdminService {
 	boolean isRightImage(String idNum);
 
 	void addNewStudent(StuGraduateInfo info);
+
+	StuGraduateInfo queryKV(String key, String value);
+
+	StuGraduateInfo query4Update(String stuId);
+
+	StuGraduateInfo updateGraduate(StuGraduateInfo info);
 }

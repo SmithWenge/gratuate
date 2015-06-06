@@ -77,30 +77,16 @@ public class AdminServiceImpl implements AdminService {
 		repository.insert(info);
 	}
 
+	public StuGraduateInfo queryKV(String key, String value) {
+		return repository.selectInfo(key, value);
+	}
 
-//	public Admin loginAdmin(Admin admin) {
-//		if (admin != null) {
-//			impl.login(admin);
-//		}
-//		return null;
-//	}
-//
-//	public List<Log> getLogs(Admin admin, Pageable pageable){
-//		if(impl.login(admin) != null){
-//			return impl.query4Log(pageable);
-//		}
-//		return null;
-//	}
-//
-//	public Page<Log> readUsersWithPage(Pageable pageable) {
-//		if (!isLogin(admin)) return null;
-//		return imp.selectWithPage(pageable);
-//
-//	}
-//
-//	public boolean isLogin(Admin admin) {
-//		Admin login = impl.login(admin);
-//
-//        return login != null;
-//	}
+	public StuGraduateInfo query4Update(String stuId) {
+		return repository.queryByStuId(stuId);
+	}
+
+	@Transactional
+	public StuGraduateInfo updateGraduate(StuGraduateInfo info) {
+		return repository.update(info);
+	}
 }
