@@ -1,5 +1,5 @@
 <configuration debug="true">
-    <substitutionProperty name="logDir" value="logs" />
+    <substitutionProperty name="logDir" value="src/main/webapp/WEB-INF/logs/" />
     <substitutionProperty name="logName" value="graduate" />
 
     <!-- Output to console -->
@@ -18,7 +18,7 @@
         <!-- encoders are assigned by default the type
         ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%file:%line] %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%file:%line] - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${logDir}/${logName}-%d{yyyy-MM-dd}.log</FileNamePattern>
@@ -39,10 +39,10 @@
         <!--</connectionSource>-->
     <!--</appender>-->
 
-    <logger name="info" level="debug" additivity="fasle">
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILE" />
-    </logger>
+    <!--<logger name="info" level="debug" additivity="fasle">-->
+        <!--<appender-ref ref="STDOUT" />-->
+        <!--<appender-ref ref="FILE" />-->
+    <!--</logger>-->
 
     <root level="error">
         <appender-ref ref="STDOUT" />
@@ -54,6 +54,6 @@
         <!--
         <appender-ref ref="DB" />
         -->
-        <appender-ref ref="STDOUT" />
+        <!--<appender-ref ref="STDOUT" />-->
     </root>
 </configuration>

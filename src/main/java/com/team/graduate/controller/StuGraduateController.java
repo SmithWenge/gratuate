@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.google.code.kaptcha.Constants;
 import com.team.graduate.common.constant.WebConstant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +24,7 @@ public class StuGraduateController {
 
 	private static final String SEARCH_REDIRECT_LOCATION = "redirect:/router/search.action";
 	private static final String Authentication_REDIRECT_LOCATION ="redirect:/router/authentication.action";
+	private static final Logger LOGGER = LoggerFactory.getLogger(StuGraduateController.class);
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute StuGraduateInfo stu,
@@ -38,6 +41,10 @@ public class StuGraduateController {
 
 			List<StuGraduateInfo> stuInfo = service.selectStuGraduateInfo(stu);
 			if (stuInfo != null) {
+
+				LOGGER.info("The student QUERY SUCCESS, the name is {} and the id is {}.",
+						stu.getStuName(), stu.getStuIdentificationNum());
+
 				mav.addObject("stus", stuInfo);
 				mav.addObject("stuName", stu.getStuName());
 				mav.addObject("stuNameIdNum", stu.getStuIdentificationNum());
@@ -47,6 +54,9 @@ public class StuGraduateController {
 				mav.setViewName("stu/error/search");
 			}
 		} else {
+			LOGGER.info("The student QUERY FAILURE, NO STUDENT, the name is {} and the id is {}.",
+					stu.getStuName(), stu.getStuIdentificationNum());
+
 			mav.setViewName(SEARCH_REDIRECT_LOCATION);
 		}
 
@@ -74,10 +84,15 @@ public class StuGraduateController {
 			StuGraduateInfo stuInfo = service.authStuGraduateInfo(stu);
 
 			if (stuInfo != null) {
+				LOGGER.info("The student AUTHENTICATION SUCCESS, the name is {} and the Degree Number is {} and the Publication Date is {}.",
+						stu.getStuName(), stu.getStuMajorDegreeCertNum(), stu.getStuPublicationDate());
+
 				mav.addObject("stu", stuInfo);
 
 				mav.setViewName("stu/result/authentication");
 			} else {
+				LOGGER.info("The student AUTHENTICATION FAILURE, the name is {} and the Degree Number is {} and the Publication Date is {}.",
+						stu.getStuName(), stu.getStuMajorDegreeCertNum(), stu.getStuPublicationDate());
 				mav.addObject("stu", stu);
 				mav.setViewName("stu/error/authentication");
 			}

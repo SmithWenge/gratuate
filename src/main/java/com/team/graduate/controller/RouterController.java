@@ -110,4 +110,13 @@ public class RouterController {
             return "admin/single/add";
         }
     }
+
+    @RequestMapping(value = "/log/index")
+    public String logQuery(HttpServletRequest request) {
+        if (null == request.getSession().getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return ADMIN_LOGIN;
+        } else {
+            return "admin/log/logIndex";
+        }
+    }
 }

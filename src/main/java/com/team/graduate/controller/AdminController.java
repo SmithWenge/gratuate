@@ -21,10 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * CopyRight (c) 2015 : 56Team
@@ -383,5 +380,43 @@ public class AdminController {
             return REDIRECT_ROUTER_ADMIN_ACTION;
 
         return "admin/single/index";
+    }
+
+    @RequestMapping(value = "/log/query", method = RequestMethod.POST)
+    public ModelAndView query4Log(@RequestParam("logDate") String date, @RequestParam("authCode") String authCode,
+                                  HttpSession session) {
+        if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
+            return new ModelAndView("redirect:/router/single.action");
+
+        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        String logFilePath = session.getServletContext().getRealPath("/WEB-INF/logs/");
+
+        File file = new File(logFilePath);
+        List<String> list = new ArrayList<String>();
+
+        if (file.exists() && file.isDirectory()) {
+            File[] logs = file.listFiles();
+
+            for (File log : logs) {
+                DateTime time = new DateTime(log.lastModified());
+                if ( date.equals(time.toString("yyyy-MM-dd"))) {
+                    list.add(log.getName());
+                }
+            }
+        }
+
+        return new ModelAndView("admin/log/result", "logs", list);
+    }
+
+    @RequestMapping(value = "/log/query", method = RequestMethod.GET)
+    public ModelAndView query4LogGet(HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        return new ModelAndView("redirect:/router/log/index.action");
     }
 }
