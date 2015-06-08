@@ -8,12 +8,15 @@ address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font
 a:hover { text-decoration:underline; }*/
 img { border:none; }
 ol,ul,li { list-style:none; }
-input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
-table { border-collapse:collapse; }
-html {overflow-y: scroll;} 
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; box-shadow: none }
+table { border-collapse:collapse;line-height: 30px;}
+table tr,td{height: 30px;line-height: 30px;}
+
+html {overflow-y: scroll;}
 /* css common */
 .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
+.btn2{margin-top: 6px;margin-left: 42px; box-shadow: none;}
 
 body{
 	background: #f3f3f3;
@@ -28,11 +31,14 @@ button{
 	background: #3696be;
 	color: #fff;
 	border-radius: 3px;
+	box-shadow: none;
 }
 input{
 	width: 200px;
 	height: 26px;
 	border-radius: 3px;
+	box-shadow: none;
+	background: none;
 }
 /**  **/
 #wraper{
@@ -47,7 +53,7 @@ input{
 }
 /**  **/
 #content{
-	height: 400px;
+	height: 420px;
 	background: #ffffff;
 }
 #side-bar{
@@ -98,7 +104,7 @@ input{
 
 #main-title{
 	height: 80px;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	background: #f7f8f9;
 	font-size: 24px;
 	text-align: center;
@@ -117,16 +123,18 @@ input{
 	margin-top: 40px;
 	margin-left: 60px;
 	}
+.mainLeft table tr{line-height: 20px;}
 .mainRight{
 	float: right;
 	margin-top: 40px;
-	margin-right: 80px;
+	margin-right: 16px;
 	line-height: 180%;
 }
 #searchResult,#identityResult{
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 	margin-left: 40px;
 }
+#identityResult tr td{height: 30px;line-height: 30px;}
 /**  **/
 #footer{
 	height: 72px;
@@ -135,6 +143,6 @@ input{
 	font-size: 8px;
 	line-height: 200%;
 	color: #F3F3F3;
-	padding-top: 20px;
+	padding-top: 14px;
 	text-align: center;
 }

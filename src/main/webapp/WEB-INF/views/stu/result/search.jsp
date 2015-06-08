@@ -25,25 +25,20 @@
 		</table>
 		<table>
 			<tr>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
 				<td>证书编号：</td>
 				<td>学位类型</td>
 				<td>专业</td>
 			</tr>
 			<c:forEach items="${stus}" var="stu">
 				<tr>
-					<td id="stuGraduationCardNum"></td>
-					<td id="stuMajorDegree"></td>
-					<td id="stuSpecialty"></td>
+					<td id="stuGraduationCardNum">${stu.stuMajorDegreeCertNum}</td>
+					<td id="stuMajorDegree">${stu.stuMajorDegree}</td>
+					<td id="stuSpecialty">${stu.stuSpecialty}</td>
 				</tr>
-				<tr>
-					<td>${stu.stuMajorDegreeCertNum}</td>
-					<td>${stu.stuMajorDegree}</td>
-					<td>${stu.stuSpecialty}</td>
-				</tr>
+
 			</c:forEach>
+			<tr><td>&nbsp;</td></tr>
+			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td colspan=5><small>*注意：最终学位信息以学位部门记载为准，如有疑义，请与我校相关主管部门联系。联系电话：0411-8622XXXX</small></td>
 			</tr>

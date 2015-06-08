@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td>您输入的学位证号：</td>
-                <td>${stu.stuDiplomaNum }</td>
+                <td>${stu.stuMajorDegreeCertNum }</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>

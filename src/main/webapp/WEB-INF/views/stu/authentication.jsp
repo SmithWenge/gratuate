@@ -44,9 +44,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
 						<td colspan="2"><input type="submit" class="btn2"
 							value="开始认证"></td>
 					</tr>
@@ -96,12 +93,12 @@
 					messages : {
 						stuName : {
 							required : "请输入您的姓名",
-							minlength : "您的姓名的字数需要在2到10之间",
-							maxlength : "您的姓名的字数需要在2到10之间"
+							minlength : "姓名需要在2到10之间",
+							maxlength : "姓名需要在2到10之间"
 						},
 						stuMajorDegreeCertNum : {
 							required : "请填写您的学位证号",
-							idLength : "您的学位证号长度应该是16位"
+							idLength : "学位证号应该是16位"
 						},
 						stuPublicationDate : {
 							required : "请输入您的发证日期"
@@ -116,8 +113,8 @@
 		</script>
 		<div class="mainRight">
 			<p>
-				填写说明：<br /> 1.“姓名”需要与待查证书中的姓名书写一致；<br />
-				2.验证码不区分大小写，看不清点击图片即可更换。
+				填写说明：<br /> 1.<b>姓名</b>需要与待查证书中的姓名书写一致<br />
+				2.验证码不区分大小写，看不清点击图片即可更换
 			</p>
 		</div>
 	</div>
