@@ -7,7 +7,7 @@
         <div class="panel-heading">
             <ul class="nav nav-pills">
                 <li role="presentation" class="active"><a>查看日志文件</a></li>
-                <li role="presentation" style="float: right;"><a>查看所有日志文件</a></li>
+                <li role="presentation" style="float: right;"><a href="${reqBaseURL}/admin/log/all.action">查看所有日志文件</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -27,12 +27,18 @@
                         <td>${status.count}</td>
                         <td>${log}</td>
                         <td>
-                            <button type="button" class="btn btn-default" aria-label="Left Align" value="删除">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                            </button>
-                            <button type="button" class="btn btn-default" aria-label="Left Align" value="删除">
-                                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-                            </button>
+                            <ul class="nav nav-pills">
+                                <%--<li role="presentation">--%>
+                                    <%--<a href="${reqBaseURL}/admin/log/delete.action?log=${log}">--%>
+                                        <%--<span class="glyphicon glyphicon-remove" aria-hidden="true">删除</span>--%>
+                                    <%--</a>--%>
+                                <%--</li>--%>
+                                <li role="presentation" class="active">
+                                    <a href="${reqBaseURL}/admin/log/download.action?log=${log}">
+                                        <span class="glyphicon glyphicon-download-alt">下载</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                 </c:forEach>

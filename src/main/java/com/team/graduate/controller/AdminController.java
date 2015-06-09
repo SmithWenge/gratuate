@@ -394,6 +394,7 @@ public class AdminController {
             return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         String logFilePath = session.getServletContext().getRealPath("/WEB-INF/logs/");
+        System.out.println(logFilePath);
 
         File file = new File(logFilePath);
         List<String> list = new ArrayList<String>();
@@ -409,6 +410,8 @@ public class AdminController {
             }
         }
 
+        if (list.size() == 0) list.add("graduate.log");
+
         return new ModelAndView("admin/log/result", "logs", list);
     }
 
@@ -418,5 +421,88 @@ public class AdminController {
             return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         return new ModelAndView("redirect:/router/log/index.action");
+    }
+
+    @RequestMapping(value = "/log/all", method = RequestMethod.GET)
+    public ModelAndView listAll(HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+
+        String logFilePath = session.getServletContext().getRealPath("/WEB-INF/logs/");
+        System.out.println(logFilePath);
+
+        File file = new File(logFilePath);
+        List<String> list = new ArrayList<String>();
+
+        if (file.exists() && file.isDirectory()) {
+            File[] logs = file.listFiles();
+
+            for (File log : logs) {
+                list.add(log.getName());
+            }
+        }
+
+        return new ModelAndView("admin/log/result", "logs", list);
+    }
+
+    @RequestMapping(value = "/log/delete")
+    public String deleteLog(@RequestParam("log") String fileName, HttpSession session) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return REDIRECT_ROUTER_ADMIN_ACTION;
+
+        String logFilePath = session.getServletContext().getRealPath("/WEB-INF/logs/");
+        File file = new File(logFilePath);
+
+        if (file.exists() && file.isDirectory()) {
+            File[] logs = file.listFiles();
+
+            for (File test : logs) {
+                if (test.equals(fileName)) test.delete();
+            }
+        }
+
+        return "redirect:/router/log/index.action";
+    }
+
+    @RequestMapping("/log/download")
+    public String downloadLog(@RequestParam("log") String fileName, HttpSession session, HttpServletResponse response) {
+        if (null == session.getAttribute(ADMIN_LOGIN_TAG))
+            return REDIRECT_ROUTER_ADMIN_ACTION;
+
+        String templatePath = session.getServletContext().getRealPath("/") + "WEB-INF/logs/" + fileName;
+        System.out.println(templatePath);
+
+        try {
+            File file = new File(templatePath);
+
+            if (!file.exists()) return null;
+
+            response.setContentType("application/x-msdownload");
+            response.setCharacterEncoding("UTF-8");
+            response.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+            response.setHeader("Content-Length", String.valueOf(file.length()));
+
+            int length = 0;
+            byte[] buffer = new byte[1024];
+
+            FileInputStream fis = new FileInputStream(file);
+            OutputStream os = response.getOutputStream();
+
+            while (-1 != (length = fis.read(buffer, 0, buffer.length))) {
+                os.write(buffer, 0, length);
+            }
+
+            os.flush();
+            os.close();
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
     }
 }

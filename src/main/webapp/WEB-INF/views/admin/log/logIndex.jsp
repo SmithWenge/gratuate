@@ -7,7 +7,7 @@
         <div class="panel-heading">
             <ul class="nav nav-pills">
                 <li role="presentation" class="active"><a>查看日志文件</a></li>
-                <li role="presentation" style="float: right;"><a>查看所有日志文件</a></li>
+                <li role="presentation" style="float: right;"><a href="${reqBaseURL}/admin/log/all.action">查看所有日志文件</a></li>
             </ul>
         </div>
         <div class="panel-body">
