@@ -40,7 +40,7 @@ public class StuGraduateController {
 			request.getSession().setAttribute(Constants.KAPTCHA_SESSION_KEY, null);
 
 			List<StuGraduateInfo> stuInfo = service.selectStuGraduateInfo(stu);
-			if (stuInfo != null) {
+			if (stuInfo != null && stuInfo.size() > 0) {
 
 				LOGGER.info("The student QUERY SUCCESS, the name is {} and the id is {}.",
 						stu.getStuName(), stu.getStuIdentificationNum());
