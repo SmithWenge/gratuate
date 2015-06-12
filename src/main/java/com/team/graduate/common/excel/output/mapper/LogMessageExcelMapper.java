@@ -14,9 +14,9 @@ public class LogMessageExcelMapper implements ExcelMapper<LogMessage> {
 		try {
 			sheet.addCell(new Label(0, rowNum, message.getIPAddress()));
 			sheet.addCell(new Label(1, rowNum, message.getQueryStuName()));
-			sheet.addCell(new Label(2, rowNum, message.getQueryStuId()));
-			sheet.addCell(new Label(3, rowNum, message.getQueryStuDegree()));
-			sheet.addCell(new Label(4, rowNum, message.getQueryStuDate().toString()));
+			sheet.addCell(new Label(2, rowNum, defaultNullValue(message.getQueryStuId())));
+			sheet.addCell(new Label(3, rowNum, defaultNullValue(message.getQueryStuDegree())));
+			sheet.addCell(new Label(4, rowNum, defaultNullValue(message.getQueryStuDate())));
 			sheet.addCell(new Label(5, rowNum, message.getOkOrNot()));
 			sheet.addCell(new Label(6, rowNum, message.getTime().toString()));
 			sheet.addCell(new Label(7, rowNum, message.getTag()));
@@ -29,4 +29,7 @@ public class LogMessageExcelMapper implements ExcelMapper<LogMessage> {
 		}
 	}
 
+	private String defaultNullValue(Object value) {
+		return null == value ? "" : value.toString();
+	}
 }

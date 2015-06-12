@@ -55,7 +55,8 @@ public class LogController {
 
         List<LogMessage> messages = service.listAll();
         ExcelFactory<LogMessage> factory = new ExcelFactory<LogMessage>();
-        File file = new File("logs.xls");
+        String targetPath = session.getServletContext().getRealPath("/WEB-INF/data/log/");
+        File file = new File(targetPath + "/" + "logs.xls");
 
         WritableWorkbook workbook = null;
         try {
