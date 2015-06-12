@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.google.code.kaptcha.Constants;
 import com.team.graduate.common.constant.WebConstant;
+import com.team.graduate.model.LogMessage;
+import com.team.graduate.service.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,17 @@ import java.util.List;
 public class StuGraduateController {
 	@Autowired
 	private StuGraduateService service;
+	@Autowired
+	private LogService logService;
 
 	private static final String SEARCH_REDIRECT_LOCATION = "redirect:/router/search.action";
 	private static final String Authentication_REDIRECT_LOCATION ="redirect:/router/authentication.action";
 	private static final Logger LOGGER = LoggerFactory.getLogger(StuGraduateController.class);
+
+	private static final String STUDENT_SEARCH_TAG = "QUERY";
+	private static final String STUDENT_AUTHENTICATION_TAG = "AUTHENTICATION";
+	private static final String STUDENT_IS_OK = "OK";
+	private static final String STUDENT_IS_NOT_OK = "NOT OK";
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute StuGraduateInfo stu,
@@ -40,7 +49,13 @@ public class StuGraduateController {
 			request.getSession().setAttribute(Constants.KAPTCHA_SESSION_KEY, null);
 
 			List<StuGraduateInfo> stuInfo = service.selectStuGraduateInfo(stu);
+			LogMessage message = new LogMessage( request.getRemoteAddr(), stu.getStuName(),
+					stu.getStuIdentificationNum(), STUDENT_SEARCH_TAG);
+
 			if (stuInfo != null && stuInfo.size() > 0) {
+
+				message.setOkOrNot(STUDENT_IS_OK);
+				logService.addNewLog(message);
 
 				LOGGER.info("The student QUERY SUCCESS, the name is {} and the id is {}.",
 						stu.getStuName(), stu.getStuIdentificationNum());
@@ -50,6 +65,10 @@ public class StuGraduateController {
 				mav.addObject("stuNameIdNum", stu.getStuIdentificationNum());
 				mav.setViewName("stu/result/search");
 			} else {
+
+				message.setOkOrNot(STUDENT_IS_NOT_OK);
+				logService.addNewLog(message);
+
 				mav.addObject("stu", stu);
 				mav.setViewName("stu/error/search");
 			}
@@ -77,6 +96,8 @@ public class StuGraduateController {
 				.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString();
 
 		ModelAndView mav = new ModelAndView();
+		LogMessage message = new LogMessage(request.getRemoteAddr(), stu.getStuMajorDegreeCertNum(),
+				stu.getStuPublicationDate(), stu.getStuName(), STUDENT_AUTHENTICATION_TAG);
 
 		if (authCode != null && authCode.equals(code)) {
 //			reset key
@@ -84,6 +105,10 @@ public class StuGraduateController {
 			StuGraduateInfo stuInfo = service.authStuGraduateInfo(stu);
 
 			if (stuInfo != null) {
+
+				message.setOkOrNot(STUDENT_IS_OK);
+				logService.addNewLog(message);
+
 				LOGGER.info("The student AUTHENTICATION SUCCESS, the name is {} and the Degree Number is {} and the Publication Date is {}.",
 						stu.getStuName(), stu.getStuMajorDegreeCertNum(), stu.getStuPublicationDate());
 
@@ -91,6 +116,10 @@ public class StuGraduateController {
 
 				mav.setViewName("stu/result/authentication");
 			} else {
+
+				message.setOkOrNot(STUDENT_IS_NOT_OK);
+				logService.addNewLog(message);
+
 				LOGGER.info("The student AUTHENTICATION FAILURE, the name is {} and the Degree Number is {} and the Publication Date is {}.",
 						stu.getStuName(), stu.getStuMajorDegreeCertNum(), stu.getStuPublicationDate());
 				mav.addObject("stu", stu);

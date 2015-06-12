@@ -36,7 +36,8 @@ pageEncoding="UTF-8"%>
               <li><a href="${reqBaseURL}/router/admin.action">导入数据</a></li>
               <li><a href="${reqBaseURL}/router/image.action">导入图片</a></li>
               <li><a href="${reqBaseURL}/router/single.action">单条数据</a></li>
-              <li><a href="${reqBaseURL}/router/log/index.action">日志</a></li>
+              <li><a href="${reqBaseURL}/router/log/index.action">日志文件</a></li>
+              <li><a href="${reqBaseURL}/log/list.action">日志信息</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a>管理员: ${sessionScope.adminLogin.username}</a></li>

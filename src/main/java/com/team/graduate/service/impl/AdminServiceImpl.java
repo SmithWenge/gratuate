@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.team.graduate.common.excel.ExcelConverter;
-import com.team.graduate.common.excel.StuGraduateInfoExcelMapper;
+import com.team.graduate.common.excel.into.ExcelConverter;
+import com.team.graduate.common.excel.into.StuGraduateInfoExcelMapper;
 import com.team.graduate.controller.AdminController;
 import com.team.graduate.model.StuGraduateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
