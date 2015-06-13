@@ -89,4 +89,8 @@ public class AdminServiceImpl implements AdminService {
 	public StuGraduateInfo updateGraduate(StuGraduateInfo info) {
 		return repository.update(info);
 	}
+
+	public int queryAllCount() {
+		return repository.selectCountTotal();
+	}
 }

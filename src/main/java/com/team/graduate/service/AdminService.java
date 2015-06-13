@@ -21,4 +21,6 @@ public interface AdminService {
 	StuGraduateInfo query4Update(String stuId);
 
 	StuGraduateInfo updateGraduate(StuGraduateInfo info);
+
+	int queryAllCount();
 }

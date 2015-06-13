@@ -99,6 +99,13 @@ public class AdminRepositoryImpl implements AdminRepository {
         return null;
     }
 
+    public int selectCountTotal() {
+        String sql = "SELECT count(1) FROM graduate.stu_graduate_info";
+        Object[] args = { };
+
+        return jdbcTemplate.queryForObject(sql, args, Integer.class);
+    }
+
     private class AdminRowMapper implements ParameterizedRowMapper<Admin> {
 
         public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {

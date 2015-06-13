@@ -6,6 +6,7 @@ import com.team.graduate.common.util.MD5Util;
 import com.team.graduate.model.Admin;
 import com.team.graduate.model.StuGraduateInfo;
 import com.team.graduate.service.AdminService;
+import com.team.graduate.service.LoginTimeService;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -51,6 +53,9 @@ public class AdminController {
     @Qualifier("adminServiceImpl")
     private AdminService service;
 
+    @Autowired
+    private LoginTimeService loginTimeService;
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView adminLogin(Admin admin, HttpSession session, @RequestParam("authCode") String authCode) {
         if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
@@ -62,9 +67,22 @@ public class AdminController {
         Admin result = service.login(admin);
 
         if (null == result) return new ModelAndView("redirect:/router/admin.action");
+
         session.setAttribute(ADMIN_LOGIN_TAG, result);
 
-        return new ModelAndView("admin/result/importIndex");
+        ModelAndView mav = new ModelAndView("admin/result/importIndex");
+        Timestamp recent = loginTimeService.queryRecent();
+        if (recent == null) {
+            mav.addObject("recent", "你是第一次登陆");
+        } else {
+            mav.addObject("recent", recent);
+        }
+
+        mav.addObject("total", service.queryAllCount());
+
+        loginTimeService.update(new Timestamp(new DateTime().toDate().getTime()));
+
+        return mav;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

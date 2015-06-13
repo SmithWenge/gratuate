@@ -15,4 +15,6 @@ public interface AdminRepository {
     StuGraduateInfo queryByStuId(String stuId);
 
     StuGraduateInfo update(StuGraduateInfo info);
+
+    int selectCountTotal();
 }
