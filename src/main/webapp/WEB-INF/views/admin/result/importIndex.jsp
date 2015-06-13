@@ -6,7 +6,7 @@
     <div class="panel panel-default" style="margin-top: 2%;">
         <div class="panel-heading">
             <ul class="nav nav-pills">
-                <li role="presentation" class="active"><a>录入数据</a></li>
+                <li role="presentation" class="active"><a>导入数据</a></li>
                 <li role="presentation" style="float: right;"><a href="${reqBaseURL}/admin/download.action">获取模板</a></li>
             </ul>
         </div>
@@ -26,11 +26,11 @@
             <form class="form-inline" action="${reqBaseURL}/admin/import.action" method="post"
                   enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="inputFile">添加文件</label>
+                    <label for="inputFile">添加数据文件</label>
                     <input type="file" id="inputFile" name="file">
                     <p class="help-block">请确保添加正确文件</p>
                 </div>
-                <button type="submit" class="btn btn-default">录入数据</button>
+                <button type="submit" class="btn btn-default">导入数据</button>
             </form>
         </div>
     </div>

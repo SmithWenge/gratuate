@@ -40,8 +40,9 @@ public class StuGraduateController {
 							   HttpServletRequest request, @RequestParam("authCode") String code) {
 
 		if (!(stu.isLegal() && code.length() == 4)) return new ModelAndView(SEARCH_REDIRECT_LOCATION);
+		Object tmpCode = request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
 
-		String authCode = request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY).toString();
+		String authCode = tmpCode == null ? null : tmpCode.toString();
 		ModelAndView mav = new ModelAndView();
 
 		if (authCode != null && authCode.equals(code)) {
@@ -91,9 +92,9 @@ public class StuGraduateController {
 	public ModelAndView authentication(@ModelAttribute StuGraduateInfo stu,
 									   HttpServletRequest request, @RequestParam("authCode") String code) {
 		if (!stu.isAuthenticationLegal()) return new ModelAndView(Authentication_REDIRECT_LOCATION);
+		Object tmpCode = request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
 
-		String authCode = request.getSession()
-				.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString();
+		String authCode = tmpCode == null ? null : tmpCode.toString();
 
 		ModelAndView mav = new ModelAndView();
 		LogMessage message = new LogMessage(request.getRemoteAddr(), stu.getStuMajorDegreeCertNum(),

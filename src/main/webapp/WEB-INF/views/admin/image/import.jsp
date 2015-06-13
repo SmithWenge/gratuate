@@ -6,7 +6,7 @@
     <div class="panel panel-default" style="margin-top: 2%;">
         <div class="panel-heading">
             <ul class="nav nav-pills">
-                <li role="presentation" class="active"><a>导入图片</a></li>
+                <li role="presentation" class="active"><a>导入照片</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -22,7 +22,7 @@
             <form class="form-inline" action="${reqBaseURL}/admin/image/import.action" method="post"
                   enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="inputImage">添加图片</label>
+                    <label for="inputImage">添加照片</label>
                     <input type="file" id="inputImage" name="image" multiple>
                     <p class="help-block">请确保添加正确文件</p>
                 </div>
