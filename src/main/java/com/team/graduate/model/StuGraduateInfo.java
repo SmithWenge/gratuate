@@ -16,7 +16,7 @@ public class StuGraduateInfo {
 	private String stuSpecialtyMajor;	//专业方向
 	private String stuClass;	//班级
 	private String stuPicture;	//图片
-	private String stuGraduationCardNum;	//毕业证编号
+//	private String stuGraduationCardNum;	//毕业证编号
 	private String stuMajorDegreeCertNum;	//学位证编号
 	private String stuMajorDegree;			//学位
 	private String stuDoubleMajorDegree;	//第二学位
@@ -114,12 +114,12 @@ public class StuGraduateInfo {
 	public void setStuPicture(String stuPicture) {
 		this.stuPicture = stuPicture;
 	}
-	public String getStuGraduationCardNum() {
-		return stuGraduationCardNum;
-	}
-	public void setStuGraduationCardNum(String stuGraduationCardNum) {
-		this.stuGraduationCardNum = stuGraduationCardNum;
-	}
+//	public String getStuGraduationCardNum() {
+//		return stuGraduationCardNum;
+//	}
+//	public void setStuGraduationCardNum(String stuGraduationCardNum) {
+//		this.stuGraduationCardNum = stuGraduationCardNum;
+//	}
 	public String getStuMajorDegreeCertNum() {
 		return stuMajorDegreeCertNum;
 	}
@@ -200,7 +200,7 @@ public class StuGraduateInfo {
 	}
 
 	public boolean isLegalImportData() {
-		return this.getStuGraduationCardNum().length() == 16 && this.getStuMajorDegree() != null
+		return this.getStuMajorDegree() != null
 				&& this.getStuSpecialty() != null && this.getStuName() != null
 				&& this.getStuIdentificationNum().length() == 18 && this.getStuMajorDegreeCertNum().length() == 16
 				&& this.getStuBrithday() != null && this.getStuGender() != null

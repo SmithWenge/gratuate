@@ -17,16 +17,16 @@
                     <td>姓名</td>
                     <td>身份证号</td>
                     <td>学号</td>
-                    <td>毕业证编号</td>
                     <td>学位证编号</td>
+                    <td>专业</td>
                 </tr>
                 <c:forEach items="${repeatData}" var="info">
                     <tr>
                         <td>${info.stuName}</td>
                         <td>${info.stuIdentificationNum}</td>
                         <td>${info.stuNumber}</td>
-                        <td>${info.stuGraduationCardNum}</td>
                         <td>${info.stuMajorDegreeCertNum}</td>
+                        <td>${info.stuSpecialty}</td>
                     </tr>
                 </c:forEach>
             </table>
@@ -48,16 +48,16 @@
                     <td>姓名</td>
                     <td>身份证号</td>
                     <td>学号</td>
-                    <td>毕业证编号</td>
                     <td>学位证编号</td>
+                    <td>专业</td>
                 </tr>
                 <c:forEach items="${errorData}" var="info">
                     <tr>
                         <td>${info.stuName}</td>
                         <td>${info.stuIdentificationNum}</td>
                         <td>${info.stuNumber}</td>
-                        <td>${info.stuGraduationCardNum}</td>
                         <td>${info.stuMajorDegreeCertNum}</td>
+                        <td>${info.stuSpecialty}</td>
                     </tr>
                 </c:forEach>
             </table>

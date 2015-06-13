@@ -51,19 +51,18 @@ public class StuGraduateInfoExcelMapper implements ExcelMapper<StuGraduateInfo> 
 		this.mapExcel(row);
 		
 		StuGraduateInfo graduateInfo = new StuGraduateInfo();
-		
-		graduateInfo.setStuName(strings[0]);
-		graduateInfo.setStuNumber(strings[1]);
+
+		graduateInfo.setStuNumber(strings[0]);
+		graduateInfo.setStuName(strings[1]);
 		graduateInfo.setStuGender(strings[2]);
 		graduateInfo.setStuBrithday(DataConvUtil.dataFromStringToDate(strings[3]));
-		graduateInfo.setStuEnrollment(DataConvUtil.dataFromStringToDate(strings[4]));
-		graduateInfo.setStuGraduation(DataConvUtil.dataFromStringToDate(strings[5]));
-		graduateInfo.setStuSpecialty(strings[6]);
-		graduateInfo.setStuGraduationCardNum(strings[7]);
-		graduateInfo.setStuMajorDegreeCertNum(strings[8]);
-		graduateInfo.setStuMajorDegree(strings[9]);
-		graduateInfo.setStuIdentificationNum(strings[10]);
-		graduateInfo.setStuPublicationDate(DataConvUtil.dataFromStringToDate(strings[11]));
+		graduateInfo.setStuIdentificationNum(strings[4]);
+		graduateInfo.setStuEnrollment(DataConvUtil.dataFromStringToDate(strings[5]));
+		graduateInfo.setStuGraduation(DataConvUtil.dataFromStringToDate(strings[6]));
+		graduateInfo.setStuSpecialty(strings[7]);
+		graduateInfo.setStuMajorDegree(strings[8]);
+		graduateInfo.setStuMajorDegreeCertNum(strings[9]);
+		graduateInfo.setStuPublicationDate(DataConvUtil.dataFromStringToDate(strings[10]));
 		graduateInfo.setId(UUID.randomUUID().toString());
 
 		strings = null;

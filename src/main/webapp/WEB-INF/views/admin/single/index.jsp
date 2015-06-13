@@ -16,7 +16,7 @@
 	<div class="panel-body">
 		<form class="form-horizontal" action="${reqBaseURL}/admin/single/query.action" method="post">
 			<div class="form-group">
-				<label for="stuNumber" class="col-sm-2 control-label">毕业生学生号</label>
+				<label for="stuNumber" class="col-sm-2 control-label">学号</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="stuNumber" placeholder="1234567890" name="stuNumber">
 				</div>

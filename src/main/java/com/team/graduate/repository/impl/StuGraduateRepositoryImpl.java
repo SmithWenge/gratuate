@@ -23,7 +23,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	public List<StuGraduateInfo> selectNameAndIdentificationNum(StuGraduateInfo stu) {
-		String sql = "select stuName,stuGraduationCardNum, stuMajorDegree, stuMajorDegreeCertNum, stuSpecialty, stuIdentificationNum from stu_graduate_info where stuName=? and stuIdentificationNum=?";
+		String sql = "select stuName, stuMajorDegree, stuMajorDegreeCertNum, stuSpecialty, stuIdentificationNum from stu_graduate_info where stuName=? and stuIdentificationNum=?";
 		Object[] args = { stu.getStuName(), stu.getStuIdentificationNum() };
 
 		try {
@@ -63,7 +63,7 @@ public class StuGraduateRepositoryImpl implements StuGraduateRepository {
 
 			stu.setStuName(rs.getString("stuName"));
 			stu.setStuIdentificationNum(rs.getString("stuIdentificationNum"));
-			stu.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
+//			stu.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
 			stu.setStuMajorDegree(rs.getString("stuMajorDegree"));
 			stu.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
 			stu.setStuSpecialty(rs.getString("stuSpecialty"));

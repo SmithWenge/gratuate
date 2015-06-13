@@ -33,12 +33,12 @@ public class AdminRepositoryImpl implements AdminRepository {
 
     public void insert(StuGraduateInfo info) {
         String sql = "INSERT INTO stu_graduate_info (id, stuName, stuNumber, stuGender, stuBrithday," +
-                " stuEnrollment, stuGraduation, stuSpecialty, stuGraduationCardNum, stuMajorDegreeCertNum," +
+                " stuEnrollment, stuGraduation, stuSpecialty, stuMajorDegreeCertNum," +
                 " stuMajorDegree, stuIdentificationNum, stuPublicationDate)" +
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Object[] args = { info.getId(), info.getStuName(), info.getStuNumber(), info.getStuGender(),
                 info.getStuBrithday(), info.getStuEnrollment(), info.getStuGraduation(), info.getStuSpecialty(),
-                info.getStuGraduationCardNum(), info.getStuMajorDegreeCertNum(), info.getStuMajorDegree(),
+                info.getStuMajorDegreeCertNum(), info.getStuMajorDegree(),
                 info.getStuIdentificationNum(),  info.getStuPublicationDate() };
 
         jdbcTemplate.update(sql, args);
@@ -60,7 +60,7 @@ public class AdminRepositoryImpl implements AdminRepository {
 
     public StuGraduateInfo selectInfo(String key, String value) {
         String sql = "SELECT id, stuName, stuNumber, stuGender, stuBrithday, stuEnrollment, stuGraduation," +
-                " stuSpecialty, stuGraduationCardNum, stuMajorDegreeCertNum, stuMajorDegree," +
+                " stuSpecialty, stuMajorDegreeCertNum, stuMajorDegree," +
                 " stuIdentificationNum, stuPublicationDate FROM stu_graduate_info WHERE " + key + " = ?";
         Object[] args = { value };
 
@@ -73,7 +73,7 @@ public class AdminRepositoryImpl implements AdminRepository {
 
     public StuGraduateInfo queryByStuId(String stuId) {
         String sql = "SELECT id, stuName, stuNumber, stuGender, stuBrithday, stuEnrollment, stuGraduation," +
-                " stuSpecialty, stuGraduationCardNum, stuMajorDegreeCertNum, stuMajorDegree," +
+                " stuSpecialty, stuMajorDegreeCertNum, stuMajorDegree," +
                 " stuIdentificationNum, stuPublicationDate FROM stu_graduate_info WHERE id = ?";
         Object[] args = { stuId };
 
@@ -83,10 +83,10 @@ public class AdminRepositoryImpl implements AdminRepository {
     public StuGraduateInfo update(StuGraduateInfo info) {
         String sql = "UPDATE stu_graduate_info set stuName = ?, stuNumber = ?, stuGender = ?," +
                 " stuBrithday = ?, stuEnrollment = ?, stuGraduation = ?, stuSpecialty = ?," +
-                " stuGraduationCardNum = ?, stuMajorDegreeCertNum = ?, stuMajorDegree = ?," +
+                " stuMajorDegreeCertNum = ?, stuMajorDegree = ?," +
                 " stuIdentificationNum = ?, stuPublicationDate = ? WHERE id = ?";
         Object[] args = { info.getStuName(), info.getStuNumber(), info.getStuGender(), info.getStuBrithday(),
-                info.getStuEnrollment(), info.getStuGraduation(), info.getStuSpecialty(), info.getStuGraduationCardNum(),
+                info.getStuEnrollment(), info.getStuGraduation(), info.getStuSpecialty(),
                 info.getStuMajorDegreeCertNum(), info.getStuMajorDegree(), info.getStuIdentificationNum(),
                 info.getStuPublicationDate(), info.getId() };
 
@@ -130,7 +130,7 @@ public class AdminRepositoryImpl implements AdminRepository {
             info.setStuEnrollment(rs.getDate("stuEnrollment"));
             info.setStuGraduation(rs.getDate("stuGraduation"));
             info.setStuSpecialty(rs.getString("stuSpecialty"));
-            info.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
+//            info.setStuGraduationCardNum(rs.getString("stuGraduationCardNum"));
             info.setStuMajorDegreeCertNum(rs.getString("stuMajorDegreeCertNum"));
             info.setStuMajorDegree(rs.getString("stuMajorDegree"));
             info.setStuIdentificationNum(rs.getString("stuIdentificationNum"));
