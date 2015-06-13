@@ -34,20 +34,20 @@
   <div id="header"></div>
   <div id="content">
     <div id="side-bar">
-      <div id="side-top">
-        <div id="info">
-          <p>*注意：</p>
-          <p>学位信息以学校学位部门记载为准</p>
-        </div>
-      </div>
+      <%--<div id="side-top">--%>
+        <%--&lt;%&ndash;<div id="info">&ndash;%&gt;--%>
+          <%--&lt;%&ndash;&lt;%&ndash;<p>*注意：</p>&ndash;%&gt;&ndash;%&gt;--%>
+          <%--&lt;%&ndash;&lt;%&ndash;<p>学位信息以学校学位部门记载为准</p>&ndash;%&gt;&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+      <%--</div>--%>
       <div id="side-nav">
         <ul class="navY">
           <li><a href="<%=basePath%>index.jsp">首页</a></li>
           <li><a href="${reqBaseURL}/router/search.action">查询</a></li>
           <li><a href="${reqBaseURL}/router/authentication.action">认证</a></li>
           <br />
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">关于我们</a></li>
+          <li><a href="${reqBaseURL}/connect.jsp">联系方式</a></li>
+          <li><a href="${reqBaseURL}/about.jsp">关于我们</a></li>
         </ul>
       </div>
     </div>
