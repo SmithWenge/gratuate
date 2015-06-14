@@ -93,15 +93,15 @@
 					messages : {
 						stuName : {
 							required : "请输入您的姓名",
-							minlength : "姓名需要在2到10之间",
-							maxlength : "姓名需要在2到10之间"
+							minlength : "姓名在2到10之间",
+							maxlength : "姓名在2到10之间"
 						},
 						stuMajorDegreeCertNum : {
-							required : "请填写您的学位证号",
-							idLength : "学位证号应该是16位"
+							required : "请填写学位证号",
+							idLength : "学位证号是16位"
 						},
 						stuPublicationDate : {
-							required : "请输入您的发证日期"
+							required : "请输入发证日期"
 						},
 						authCode : {
 							required : "请填写验证码",

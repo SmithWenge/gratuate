@@ -177,3 +177,8 @@ input{
 	text-align: center;
 	opacity: 0.8;
 }
+
+.err_status{
+	font-size: 32px;
+}
+.err_1 {font-size:  smaller; height: 24px;}

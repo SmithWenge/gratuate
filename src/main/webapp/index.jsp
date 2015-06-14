@@ -31,7 +31,8 @@
 	<div id="idetityResult"></div>
 	<div id="connect"></div>
 	<div id="about"></div>
-	<div id="error"></div>
+	<div id="error_404"></div>
+	<div id="error_500"></div>
 </div>
 
 <%@ include file="/WEB-INF/include/footer.jsp"%>
