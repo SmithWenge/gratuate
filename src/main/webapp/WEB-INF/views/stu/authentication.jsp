@@ -105,7 +105,7 @@
 						},
 						authCode : {
 							required : "请填写验证码",
-							remote: "请输入正确的验证码"
+							remote: "请确定验证码正确"
 						}
 					}
 				});
