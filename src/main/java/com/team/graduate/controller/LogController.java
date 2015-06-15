@@ -44,8 +44,12 @@ public class LogController {
             return new ModelAndView(AdminController.REDIRECT_ROUTER_ADMIN_ACTION);
 
         List<LogMessage> messages = service.listAll();
+        int count = service.selectCount();
 
-        return new ModelAndView("admin/log/list", "messages", messages);
+        ModelAndView mav = new ModelAndView("admin/log/list", "messages", messages);
+        mav.addObject("count", count);
+
+        return mav;
     }
 
     @RequestMapping(value = "/export", method = RequestMethod.GET)

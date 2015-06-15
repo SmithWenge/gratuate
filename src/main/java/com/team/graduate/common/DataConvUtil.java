@@ -39,9 +39,10 @@ public class DataConvUtil {
 	}
 	
 	public static Date dataFromStringToDate(String date) {
+		String newDate = date.substring(0,4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
-			return new Date(sdf.parse(date).getTime());
+			return new Date(sdf.parse(newDate).getTime());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

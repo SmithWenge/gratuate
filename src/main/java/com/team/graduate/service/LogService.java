@@ -18,4 +18,5 @@ import java.util.List;
 public interface LogService {
     void addNewLog(LogMessage message);
     List<LogMessage> listAll();
+    int selectCount();
 }

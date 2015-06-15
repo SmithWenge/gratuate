@@ -20,7 +20,7 @@
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="2"><b>我们查询到如下信息：</b></td>
+				<td colspan="2"><b>查询到如下信息：</b></td>
 			</tr>
 		</table>
 		<table>

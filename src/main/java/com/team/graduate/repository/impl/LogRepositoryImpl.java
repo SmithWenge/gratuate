@@ -37,10 +37,17 @@ public class LogRepositoryImpl implements LogRepository {
     }
 
     public List<LogMessage> selectAll() {
-        String sql = "SELECT id, IPAddress, queryStuName, queryStuDegree, queryStuId, queryStuDate, tag, `time`, okOrNot FROM stu_graduate_log";
+        String sql = "SELECT id, IPAddress, queryStuName, queryStuDegree, queryStuId, queryStuDate, tag, `time`, okOrNot FROM stu_graduate_log  ORDER BY `time` DESC LIMIT 0,10";
         Object[] args = { };
 
         return jdbcTemplate.query(sql, args, new LogMessageRowMapper());
+    }
+
+    public int selectCount() {
+        String sql = "SELECT count(1) as total FROM graduate.stu_graduate_log";
+        Object[] args = { };
+
+        return jdbcTemplate.queryForObject(sql, args, Integer.class);
     }
 
     private class LogMessageRowMapper implements ParameterizedRowMapper<LogMessage> {

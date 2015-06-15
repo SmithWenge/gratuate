@@ -11,14 +11,14 @@
             </ul>
         </div>
         <div class="panel-body">
-            <c:if test="${messages.size() == 0}">
+            <c:if test="${count == 0}">
                 <div class="alert alert-success" role="alert">
                     <h3>没有相关的日志信息</h3>
                 </div>
             </c:if>
-            <c:if test="${messages.size() > 0}">
+            <c:if test="${count > 0}">
                 <div class="alert alert-success" role="alert">
-                    <h3>总共有${messages.size()}条数据,</h3>
+                    <h3>总共有${count}条数据</h3>
                 </div>
             </c:if>
             <table class="table table-striped">

@@ -85,7 +85,7 @@
 						},
 						stuIdentificationNum : {
 							required : "请填写您的身份证号",
-							idLength : "您的身份证号长度应该是18位"
+							idLength : "身份证号长度是18位"
 						},
 						authCode : {
 							required : "请填写验证码",

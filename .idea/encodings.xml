@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/data/template/Template-2015-06-15.xls" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/data/template/Template-bak.xls" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/data/template/Template.xls" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/b7d8a4d271c75c93629a5b01fc66eacb.jpg" charset="GBK" />
