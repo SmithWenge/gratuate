@@ -62,21 +62,6 @@
 		<param-value>classpath:log/logback.xml</param-value>
 	</context-param>
 
-	<!--<context-param>-->
-		<!--<param-name>logbackConfigContextPathKey</param-name>-->
-		<!--<param-value>/WEB-INF/logs/</param-value>-->
-	<!--</context-param>-->
-
-	<env-entry>
-		<env-entry-name>logbackConfigContextPathKey</env-entry-name>
-		<env-entry-type>java.lang.String</env-entry-type>
-		<env-entry-value>/WEB-INF/logs/</env-entry-value>
-	</env-entry>
-
-	<listener>
-		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-	</listener>
-
 	<!-- To see Logback status, optionally add the following Logback Status servlet. -->
     <servlet>
         <servlet-name>ViewStatusMessages</servlet-name>
