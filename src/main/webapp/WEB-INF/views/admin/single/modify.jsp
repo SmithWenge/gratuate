@@ -66,11 +66,11 @@
 						<input type="text" class="form-control" id="stuSpecialty" value="${stu.stuSpecialty}" name="stuSpecialty">
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="stuGraduationCardNum" class="col-sm-2 control-label">毕业证编号</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="stuGraduationCardNum" value="${stu.stuGraduationCardNum}" name="stuGraduationCardNum">
-					</div>
+				<%--<div class="form-group">--%>
+					<%--<label for="stuGraduationCardNum" class="col-sm-2 control-label">毕业证编号</label>--%>
+					<%--<div class="col-sm-10">--%>
+						<%--<input type="text" class="form-control" id="stuGraduationCardNum" value="${stu.stuGraduationCardNum}" name="stuGraduationCardNum">--%>
+					<%--</div>--%>
 				</div>
 				<div class="form-group">
 					<label for="stuMajorDegreeCertNum" class="col-sm-2 control-label">学位证编号</label>

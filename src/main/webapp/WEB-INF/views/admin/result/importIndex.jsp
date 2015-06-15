@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/admin/include/header.jsp"%>
 
 <div class="col-md-12">
-    <c:if test="${recent} !=null && ${total} != null">
+    <c:if test="${recent != null}">
         <div class="alert alert-success" role="alert" style="margin-top: 2%;">
             <h3>上次登录时间为: ${recent}</h3>
             <h3>总共的数据条数为: ${total}</h3>

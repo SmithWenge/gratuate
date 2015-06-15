@@ -19,4 +19,6 @@ public interface LogService {
     void addNewLog(LogMessage message);
     List<LogMessage> listAll();
     int selectCount();
+
+    List<LogMessage> listAllData();
 }

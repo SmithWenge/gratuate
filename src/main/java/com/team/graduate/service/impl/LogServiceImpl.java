@@ -36,4 +36,8 @@ public class LogServiceImpl implements LogService {
     public int selectCount() {
         return repository.selectCount();
     }
+
+    public List<LogMessage> listAllData() {
+        return repository.selectAllData();
+    }
 }

@@ -37,7 +37,7 @@ public class LogRepositoryImpl implements LogRepository {
     }
 
     public List<LogMessage> selectAll() {
-        String sql = "SELECT id, IPAddress, queryStuName, queryStuDegree, queryStuId, queryStuDate, tag, `time`, okOrNot FROM stu_graduate_log  ORDER BY `time` DESC LIMIT 0,10";
+        String sql = "SELECT id, IPAddress, queryStuName, queryStuDegree, queryStuId, queryStuDate, tag, `time`, okOrNot FROM stu_graduate_log ORDER BY `time` DESC LIMIT 0,10";
         Object[] args = { };
 
         return jdbcTemplate.query(sql, args, new LogMessageRowMapper());
@@ -48,6 +48,13 @@ public class LogRepositoryImpl implements LogRepository {
         Object[] args = { };
 
         return jdbcTemplate.queryForObject(sql, args, Integer.class);
+    }
+
+    public List<LogMessage> selectAllData() {
+        String sql = "SELECT id, IPAddress, queryStuName, queryStuDegree, queryStuId, queryStuDate, tag, `time`, okOrNot FROM stu_graduate_log";
+        Object[] args = { };
+
+        return jdbcTemplate.query(sql, args, new LogMessageRowMapper());
     }
 
     private class LogMessageRowMapper implements ParameterizedRowMapper<LogMessage> {

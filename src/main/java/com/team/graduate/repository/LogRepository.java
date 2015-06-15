@@ -20,4 +20,6 @@ public interface LogRepository {
     public void insert(LogMessage message);
     public List<LogMessage> selectAll();
     int selectCount();
+
+    List<LogMessage> selectAllData();
 }

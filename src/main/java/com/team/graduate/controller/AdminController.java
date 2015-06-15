@@ -58,7 +58,12 @@ public class AdminController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView adminLogin(Admin admin, HttpSession session, @RequestParam("authCode") String authCode) {
-        if (!authCode.equals(session.getAttribute(Constants.KAPTCHA_SESSION_KEY).toString()))
+        Object sessionCode = session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        if (sessionCode == null ) {
+            return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
+        }
+
+        if (!authCode.equals(sessionCode.toString()))
             return new ModelAndView(REDIRECT_ROUTER_ADMIN_ACTION);
 
         session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);

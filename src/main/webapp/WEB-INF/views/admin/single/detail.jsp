@@ -63,12 +63,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-4 control-label">毕业证编号</label>
-				<div class="col-sm-8">
-					<p class="form-control-static">${stu.stuGraduationCardNum}</p>
-				</div>
-			</div>
-			<div class="form-group">
 				<label class="col-sm-4 control-label">学位证编号</label>
 				<div class="col-sm-8">
 					<p class="form-control-static">${stu.stuMajorDegreeCertNum}</p>

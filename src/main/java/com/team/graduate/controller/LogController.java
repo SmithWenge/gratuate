@@ -57,7 +57,7 @@ public class LogController {
         if (null == session.getAttribute(AdminController.ADMIN_LOGIN_TAG))
             return new ModelAndView(AdminController.REDIRECT_ROUTER_ADMIN_ACTION);
 
-        List<LogMessage> messages = service.listAll();
+        List<LogMessage> messages = service.listAllData();
         ExcelFactory<LogMessage> factory = new ExcelFactory<LogMessage>();
         String targetPath = session.getServletContext().getRealPath("/WEB-INF/data/log/");
         File file = new File(targetPath + "/" + "logs.xls");
