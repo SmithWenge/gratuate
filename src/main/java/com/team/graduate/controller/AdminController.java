@@ -435,7 +435,7 @@ public class AdminController {
 
         if (list.size() == 0) list.add("graduate.log");
 
-        return new ModelAndView("admin/log/result", "logs", list);
+        return new ModelAndView("admin/log/result", "src/main/logs", list);
     }
 
     @RequestMapping(value = "/log/query", method = RequestMethod.GET)
@@ -465,7 +465,7 @@ public class AdminController {
             }
         }
 
-        return new ModelAndView("admin/log/result", "logs", list);
+        return new ModelAndView("admin/log/result", "src/main/logs", list);
     }
 
     @RequestMapping(value = "/log/delete")

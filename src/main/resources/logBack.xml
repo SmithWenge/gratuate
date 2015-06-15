@@ -1,5 +1,6 @@
 <configuration debug="true">
-    <substitutionProperty name="logDir" value="src/main/webapp/WEB-INF/logs/" />
+    <!--<insertFromJNDI env-entry-name="java:comp/env/logbackConfigContextPathKey" as="logbackConfigContextPathKey" />-->
+    <substitutionProperty name="logDir" value="graduate/logs/" />
     <substitutionProperty name="logName" value="graduate" />
 
     <!-- Output to console -->
@@ -15,6 +16,8 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${logDir}/${logName}.log</file>
         <Encoding>UTF-8</Encoding>
+        <charset>UTF-8</charset>
+        <append>true</append>
         <!-- encoders are assigned by default the type
         ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
         <encoder>

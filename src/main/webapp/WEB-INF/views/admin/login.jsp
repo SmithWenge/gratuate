@@ -30,7 +30,7 @@
 							<li><a href="${reqBaseURL}/router/admin.action">导入数据</a></li>
 							<li><a href="${reqBaseURL}/router/image.action">导入图片</a></li>
 							<li><a href="${reqBaseURL}/router/single.action">数据维护</a></li>
-							<li><a href="${reqBaseURL}/router/log/index.action">日志文件</a></li>
+							<%--<li><a href="${reqBaseURL}/router/log/index.action">日志文件</a></li>--%>
 							<li><a href="${reqBaseURL}/log/list.action">日志信息</a></li>
 						</ul>
 					</div>
