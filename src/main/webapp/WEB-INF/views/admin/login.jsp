@@ -96,12 +96,24 @@
 											}
 										}
 									}
+								},
+								username: {
+									required: true
+								},
+								password: {
+									required: true
 								}
 							},
 							messages: {
 								authCode: {
 									required: "请填写验证码",
 									remote: "请输入正确的验证码"
+								},
+								username: {
+									required: "请填写用户名"
+								},
+								password: {
+									required: "请填写密码"
 								}
 							}
 						});
