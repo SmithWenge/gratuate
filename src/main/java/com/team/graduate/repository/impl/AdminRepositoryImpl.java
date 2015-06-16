@@ -106,6 +106,13 @@ public class AdminRepositoryImpl implements AdminRepository {
         return jdbcTemplate.queryForObject(sql, args, Integer.class);
     }
 
+    public int updateAdminPassword(Admin admin) {
+        String sql = "UPDATE stu_graduate_loginuser SET password = ? WHERE username = ?";
+        Object[] args = { admin.getPassword(), admin.getUsername() };
+
+        return jdbcTemplate.update(sql, args);
+    }
+
     private class AdminRowMapper implements ParameterizedRowMapper<Admin> {
 
         public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {

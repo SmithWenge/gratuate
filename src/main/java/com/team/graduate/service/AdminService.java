@@ -23,4 +23,6 @@ public interface AdminService {
 	StuGraduateInfo updateGraduate(StuGraduateInfo info);
 
 	int queryAllCount();
+
+	int updatePassword(Admin admin);
 }

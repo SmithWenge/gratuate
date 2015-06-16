@@ -119,4 +119,13 @@ public class RouterController {
             return "admin/log/logIndex";
         }
     }
+
+    @RequestMapping(value = "/password", method = RequestMethod.GET)
+    public String passwordChange(HttpServletRequest request) {
+        if (null == request.getSession().getAttribute(AdminController.ADMIN_LOGIN_TAG)) {
+            return ADMIN_LOGIN;
+        } else {
+            return "admin/password/change";
+        }
+    }
 }

@@ -38,6 +38,7 @@ pageEncoding="UTF-8"%>
               <li><a href="${reqBaseURL}/router/single.action">数据维护</a></li>
               <%--<li><a href="${reqBaseURL}/router/log/index.action">日志文件</a></li>--%>
               <li><a href="${reqBaseURL}/log/list.action">日志信息</a></li>
+              <li><a href="${reqBaseURL}/router/password.action">更改密码</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a>管理员: ${sessionScope.adminLogin.username}</a></li>

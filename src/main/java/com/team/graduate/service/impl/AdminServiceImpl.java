@@ -93,4 +93,8 @@ public class AdminServiceImpl implements AdminService {
 	public int queryAllCount() {
 		return repository.selectCountTotal();
 	}
+
+	public int updatePassword(Admin admin) {
+		return repository.updateAdminPassword(admin);
+	}
 }

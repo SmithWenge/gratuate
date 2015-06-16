@@ -17,4 +17,5 @@ public interface AdminRepository {
     StuGraduateInfo update(StuGraduateInfo info);
 
     int selectCountTotal();
+    int updateAdminPassword(Admin admin);
 }
