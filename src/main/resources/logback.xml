@@ -1,6 +1,7 @@
 <configuration debug="true">
     <!--<insertFromJNDI env-entry-name="java:comp/env/logbackConfigContextPathKey" as="logbackConfigContextPathKey" />-->
     <substitutionProperty name="logDir" value="logs/" />
+    <!--<substitutionProperty name="logDir" value="/var/log/" />-->
     <substitutionProperty name="logName" value="graduate" />
 
     <!-- Output to console -->
