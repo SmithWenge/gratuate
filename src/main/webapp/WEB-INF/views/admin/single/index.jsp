@@ -14,7 +14,7 @@
 		</ul>
 	</div>
 	<div class="panel-body">
-		<form class="form-horizontal" action="${reqBaseURL}/admin/single/query.action" method="post">
+		<form class="form-horizontal" action="${reqBaseURL}/admin/single/query.action" method="post"  id="index-form">
 			<div class="form-group">
 				<label for="stuNumber" class="col-sm-2 control-label">学号</label>
 				<div class="col-sm-10">
@@ -42,6 +42,37 @@
 				</div>
 			</div>
 		</form>
+		<script type="text/javascript">
+			$(function() {
+				$("#change").on('click', function() {
+					$("#authCodeImg").attr("src", "${reqBaseURL}/captchaImage.action?ran=" + new Date() / 100);
+				});
+
+				$("#index-form").validate({
+					rules : {
+						authCode: {
+							required: true,
+							remote: {
+								url : "${reqBaseURL}/router/validateCode.action",
+								type : "post",
+								dataType : "json",
+								data : {
+									authCode : function() {
+										return $("#authCode").val();
+									}
+								}
+							}
+						}
+					},
+					messages: {
+						authCode: {
+							required: "请填写验证码",
+							remote: "请输入正确的验证码"
+						}
+					}
+				});
+			});
+		</script>
 	</div>
 </div>
 </div>
