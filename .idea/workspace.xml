@@ -807,7 +807,7 @@
       <workItem from="1434374169089" duration="7412000" />
       <workItem from="1434415498194" duration="3377000" />
       <workItem from="1434420091546" duration="2953000" />
-      <workItem from="1434524649340" duration="523000" />
+      <workItem from="1434524649340" duration="541000" />
     </task>
     <task id="LOCAL-00001" summary="success search but not css style good">
       <created>1432743415865</created>
@@ -953,11 +953,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434524924179</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="success remove DS_Store">
+      <created>1434525198452</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1434525198452</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214439000" />
+    <option name="totallyTimeSpent" value="214457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -1059,7 +1065,8 @@
     <MESSAGE value="success add change password feature" />
     <MESSAGE value="success fix admin login page bug for null username and password" />
     <MESSAGE value="success fix admin single index query auth code bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="success fix admin single index query auth code bug" />
+    <MESSAGE value="success remove DS_Store" />
+    <option name="LAST_COMMIT_MESSAGE" value="success remove DS_Store" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
