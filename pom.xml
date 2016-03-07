@@ -241,6 +241,20 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>dev</id>
+			<name>nexus</name>
+			<url>http://222.26.224.232:8088/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<build>
 		<finalName>graduate</finalName>
 		<plugins>
