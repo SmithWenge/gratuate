@@ -1,50 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="reqBaseURL" value="${pageContext.request.contextPath}"/>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>大连交通大学学位查询与认证系统</title>
-	<!-- 加载html_reset.css -->
-	<link rel="stylesheet" href="<%=basePath%>resource/bootstrap/css/html_reset.css" />
-	<!-- 加载bootstrap层叠样式表 -->
-	<link href="<%=basePath%>resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<!-- 加载首页认证样式 -->
-	<link rel="stylesheet" href="<%=basePath%>resource/bootstrap/css/inquire.css" />
-
-	<script type="text/javascript"
-			src="<%=basePath%>resource/jquery-2.1.0.js"></script>
-	<script src="<%=basePath%>resource/bootstrap/js/bootstrap.js"
-			type="text/javascript"></script>
-	<script src="<%=basePath%>resource/bootstrap/js/bootstrap-select.js"
-			type="text/javascript"></script>
-	<script src="<%=basePath%>resource/jquery.validate.js"
-			type="text/javascript"></script>
-	<script src="<%=basePath%>resource/jquery.metadata.js"
-			type="text/javascript"></script>
-	<script src="<%=basePath%>resource/messages_cn.js"
-			type="text/javascript"></script>
-</head>
-
-
-<body>
-<!-- header -->
-<div id="header">
-	<img src="<%=basePath%>resource/bootstrap/img/banner-02.png" alt="大连交通大学" />
-	<ul class="nav_right">
-		<li><a href="#">学位办公室</a></li>
-		<li><a href="#">教务处</a></li>
-		<li>快速访问：</li>
-	</ul>
-</div>
+<%@ include file="/WEB-INF/include/headerStu.jsp"%>
 
 <!-- content -->
 <div id="content">
@@ -156,11 +112,4 @@
 	</div>
 </div>
 
-<!--footer -->
-<div id="footer">
-	<p>学校地址：大连市沙河口区黄河路794号　邮编：116028 　联系我们：jwc@djtu.edu.cn </p>
-	<p>版权所有 ©2006 - 2015 大连交通大学 　辽ICP备05001355号</p>
-</div>
-</body>
-
-</html>
+<%@ include file="/WEB-INF/include/footerStu.jsp"%>
