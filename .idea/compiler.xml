@@ -25,7 +25,7 @@
         <module name="graduate" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel>
       <module name="graduate" target="1.5" />
     </bytecodeTargetLevel>
   </component>

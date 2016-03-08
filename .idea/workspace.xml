@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="beca9f06-bf31-430f-a08f-a7a760b6dce2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/db/db.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graduate.iml" afterPath="$PROJECT_DIR$/graduate.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/graduate.log" afterPath="$PROJECT_DIR$/logs/graduate.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/graduate_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/graduate_war_exploded.xml" />
+=======
+    <list default="true" id="d4fcacb6-e7b2-4651-9d8d-216c7b34b3a7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/graduate.log" afterPath="$PROJECT_DIR$/logs/graduate.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="graduate.iws" />
@@ -30,11 +37,114 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="db.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db/db.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.10243902">
               <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+=======
+      <file leaf-file-name="search.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/search.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authentication.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="12.529411">
+              <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StuGraduateRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+              <folding>
+                <marker date="1457370676485" expanded="true" signature="877:1032" placeholder="select stuNa..stu_graduate_info..." />
+                <marker date="1457370676485" expanded="true" signature="1320:1545" placeholder="select stuNa..stu_graduate_info..." />
+                <marker date="1457370676485" expanded="true" signature="1832:1932" placeholder="SELECT disti..stu_graduate_info..." />
+                <marker date="1457370676485" expanded="true" signature="2058:2118" placeholder="SELECT count..stu_graduate_info..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85763294">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authentication.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authentication.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/search.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notFound.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/notFound.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.764706">
+              <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
               <folding />
             </state>
           </provider>
@@ -45,9 +155,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Jsp File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,6 +170,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/service/impl/LoginTimeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/repository/LoginTimeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/LoginTimeRepositoryImpl.java" />
@@ -69,9 +178,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/about.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/header.jsp" />
+=======
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/inquireFalse.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/authFalse.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerStu.jsp" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/model/StuGraduateInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/common/excel/into/StuGraduateInfoExcelMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/error/importError.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/about.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/connect.jsp" />
@@ -81,8 +195,20 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/define3.0.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/notFound.jsp" />
+=======
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/footerStu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerRes.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/footer.jsp" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/search.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/search.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/notFound.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/common/DataConvUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/log/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/single/detail.jsp" />
@@ -113,6 +239,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/team/graduate/controller/StuGraduateController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/db/db.properties" />
+=======
+        <option value="$PROJECT_DIR$/pom.xml" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
       </list>
     </option>
   </component>
@@ -123,20 +252,11 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/apache-maven-3.1.1" />
-        <option name="userSettingsFile" value="D:\repo\mvn\settings.xml" />
+        <option name="localRepository" value="D:\ropes" />
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+        <option name="userSettingsFile" value="D:\java\apache-maven-3.3.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="downloadDocsAutomatically" value="true" />
-        <option name="downloadSourcesAutomatically" value="true" />
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="#JAVA_HOME" />
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -144,17 +264,17 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="776" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -185,7 +305,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -195,21 +315,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -220,6 +326,7 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -354,16 +461,10 @@
               <option name="myItemId" value="graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,7 +474,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -385,11 +486,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
+              <option name="myItemId" value="prompt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,7 +500,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -414,10 +515,13 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -425,7 +529,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -441,7 +545,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="graduate" />
+=======
+              <option name="myItemId" value="log" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,7 +559,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graduate" />
+              <option name="myItemId" value="java-graduate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -482,43 +590,25 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/graduate" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workspace\graduate\graduate\src\main\resources" />
-      <recent name="D:\workspace\graduate\graduate\src\main\resources\log" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF\views\admin\password" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF\data\template" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF\views\error" />
+      <recent name="D:\workspace\java-graduate\src\main\webapp\resource\bootstrap" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\workspace\graduate\graduate\src\main" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF\views\error" />
-      <recent name="D:\workspace\graduate\graduate\src\main\webapp\WEB-INF\views\stu\error" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.team.graduate.common.excel.output.mapper" />
-      <recent name="com.team.graduate.controller.common" />
+      <recent name="D:\workspace\java-graduate\src\main\webapp\resource\bootstrap\css" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.run">
+  <component name="RunManager" selected="Maven.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -784,32 +874,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="install" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="install" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="run" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration default="false" name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -834,9 +899,8 @@
       </MavenSettings>
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Maven.install" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.run" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Maven.Unnamed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -845,9 +909,10 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="beca9f06-bf31-430f-a08f-a7a760b6dce2" name="Default" comment="" />
-      <created>1432566500754</created>
+      <changelist id="d4fcacb6-e7b2-4651-9d8d-216c7b34b3a7" name="Default" comment="" />
+      <created>1457363780750</created>
       <option name="number" value="Default" />
+<<<<<<< HEAD
       <updated>1432566500754</updated>
       <workItem from="1432566504654" duration="1469000" />
       <workItem from="1432616481521" duration="9305000" />
@@ -910,168 +975,68 @@
       <workItem from="1448029578182" duration="500000" />
       <workItem from="1457263759041" duration="549000" />
       <workItem from="1457443303063" duration="254000" />
+=======
+      <updated>1457363780750</updated>
+      <workItem from="1457363783142" duration="6706000" />
+      <workItem from="1457370528904" duration="2755000" />
+      <workItem from="1457411566943" duration="1401000" />
+      <workItem from="1457412998412" duration="706000" />
+      <workItem from="1457413733126" duration="1554000" />
+      <workItem from="1457431055791" duration="2408000" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
     </task>
-    <task id="LOCAL-00001" summary="success search but not css style good">
-      <created>1432743415865</created>
+    <task id="LOCAL-00001" summary="pom commit">
+      <created>1457364580330</created>
       <option name="number" value="00001" />
       <option name="project" value="LOCAL" />
-      <updated>1432743415865</updated>
+      <updated>1457364580330</updated>
     </task>
-    <task id="LOCAL-00002" summary="success admin login and logout">
-      <created>1433168692783</created>
+    <task id="LOCAL-00002" summary="search">
+      <created>1457365562145</created>
       <option name="number" value="00002" />
       <option name="project" value="LOCAL" />
-      <updated>1433168692783</updated>
+      <updated>1457365562145</updated>
     </task>
-    <task id="LOCAL-00003" summary="success download import data template">
-      <created>1433174219389</created>
+    <task id="LOCAL-00003" summary="search">
+      <created>1457373145045</created>
       <option name="number" value="00003" />
       <option name="project" value="LOCAL" />
-      <updated>1433174219389</updated>
+      <updated>1457373145045</updated>
     </task>
-    <task id="LOCAL-00004" summary="success image import">
-      <created>1433432107473</created>
+    <task id="LOCAL-00004" summary="exit two questions">
+      <created>1457373227454</created>
       <option name="number" value="00004" />
       <option name="project" value="LOCAL" />
-      <updated>1433432107473</updated>
+      <updated>1457373227454</updated>
     </task>
-    <task id="LOCAL-00005" summary="success add single add student feature">
-      <created>1433582071297</created>
+    <task id="LOCAL-00005" summary="exit two questions">
+      <created>1457373274051</created>
       <option name="number" value="00005" />
       <option name="project" value="LOCAL" />
-      <updated>1433582071297</updated>
+      <updated>1457373274051</updated>
     </task>
-    <task id="LOCAL-00006" summary="success add single update and query student feature">
-      <created>1433593068062</created>
+    <task id="LOCAL-00006" summary="exit two questions">
+      <created>1457415262327</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1433593068062</updated>
+      <updated>1457415262327</updated>
     </task>
-    <task id="LOCAL-00007" summary="success search result and auth result page">
-      <created>1433761833254</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1433761833254</updated>
-    </task>
-    <task id="LOCAL-00008" summary="success log query by date but download and delete not ok and all log list not ok">
-      <created>1433776076346</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1433776076346</updated>
-    </task>
-    <task id="LOCAL-00009" summary="success log download and all log">
-      <created>1433861963002</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1433861963002</updated>
-    </task>
-    <task id="LOCAL-00010" summary="success replace template.xls">
-      <created>1433896926156</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1433896926156</updated>
-    </task>
-    <task id="LOCAL-00011" summary="success fix search list size is 0 bug">
-      <created>1434023491250</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1434023491250</updated>
-    </task>
-    <task id="LOCAL-00012" summary="success log message list table">
-      <created>1434088186483</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1434088186483</updated>
-    </task>
-    <task id="LOCAL-00013" summary="success log message export with excel">
-      <created>1434090241871</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1434090241871</updated>
-    </task>
-    <task id="LOCAL-00014" summary="success fix the search/auth refresh null exception bug">
-      <created>1434178375554</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1434178375554</updated>
-    </task>
-    <task id="LOCAL-00015" summary="success add recent login time and total count at AdminController">
-      <created>1434181376435</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1434181376435</updated>
-    </task>
-    <task id="LOCAL-00016" summary="success UI and contact and about">
-      <created>1434200714615</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1434200714615</updated>
-    </task>
-    <task id="LOCAL-00017" summary="success 404 and error page">
-      <created>1434263008343</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1434263008343</updated>
-    </task>
-    <task id="LOCAL-00018" summary="success 404 and error and run test">
-      <created>1434263809005</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1434263809005</updated>
-    </task>
-    <task id="LOCAL-00019" summary="remove some log files">
-      <created>1434358812777</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1434358812777</updated>
-    </task>
-    <task id="LOCAL-00020" summary="remove success fix some bugs">
-      <created>1434367278353</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1434367278353</updated>
-    </task>
-    <task id="LOCAL-00021" summary="success remote logs link in page">
-      <created>1434380652741</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1434380652741</updated>
-    </task>
-    <task id="LOCAL-00022" summary="success add change password feature">
-      <created>1434418724235</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1434418724235</updated>
-    </task>
-    <task id="LOCAL-00023" summary="success fix admin login page bug for null username and password">
-      <created>1434418982487</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1434418982487</updated>
-    </task>
-    <task id="LOCAL-00024" summary="success fix admin single index query auth code bug">
-      <created>1434524924179</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1434524924179</updated>
-    </task>
-    <task id="LOCAL-00025" summary="success remove DS_Store">
-      <created>1434525198452</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1434525198452</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="220665000" />
+=======
+    <option name="totallyTimeSpent" value="15530000" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1089,9 +1054,26 @@
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5968992" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1132,6 +1114,18 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+=======
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1145,47 +1139,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="success search but not css style good" />
-    <MESSAGE value="success admin login and logout" />
-    <MESSAGE value="success download import data template" />
-    <MESSAGE value="success image import" />
-    <MESSAGE value="success add single add student feature" />
-    <MESSAGE value="success add single update and query student feature" />
-    <MESSAGE value="success search result and auth result page" />
-    <MESSAGE value="success log query by date but download and delete not ok and all log list not ok" />
-    <MESSAGE value="success log download and all log" />
-    <MESSAGE value="success replace template.xls" />
-    <MESSAGE value="success fix search list size is 0 bug" />
-    <MESSAGE value="success log message list table" />
-    <MESSAGE value="success log message export with excel" />
-    <MESSAGE value="success fix the search/auth refresh null exception bug" />
-    <MESSAGE value="success add recent login time and total count at AdminController" />
-    <MESSAGE value="success UI and contact and about" />
-    <MESSAGE value="success 404 and error page" />
-    <MESSAGE value="success 404 and error and run test" />
-    <MESSAGE value="remove some log files" />
-    <MESSAGE value="remove success fix some bugs" />
-    <MESSAGE value="success remote logs link in page" />
-    <MESSAGE value="success add change password feature" />
-    <MESSAGE value="success fix admin login page bug for null username and password" />
-    <MESSAGE value="success fix admin single index query auth code bug" />
-    <MESSAGE value="success remove DS_Store" />
-    <option name="LAST_COMMIT_MESSAGE" value="success remove DS_Store" />
+    <MESSAGE value="pom commit" />
+    <MESSAGE value="search" />
+    <MESSAGE value="exit two questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="exit two questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/StuGraduateController.java</url>
-          <line>41</line>
+          <line>73</line>
           <properties />
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/AdminController.java</url>
@@ -1206,7 +1171,11 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
       <option name="time" value="28" />
+=======
+      <option name="time" value="1" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1215,226 +1184,353 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/error.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerRes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="51" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="252" column="39" selection-start-line="252" selection-start-column="39" selection-end-line="252" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/webapp/about.jsp">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/StuGraduateService.java">
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/impl/StuGraduateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/StuGraduateController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/connect.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25128207">
-          <caret line="7" column="10" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/define3.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="17" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/notFound.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14675768">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.43003413">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.14675768">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+=======
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/search.jsp">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="-0.43003413">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.11945392">
           <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/log/logIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3225256">
-          <caret line="9" column="106" selection-start-line="9" selection-start-column="106" selection-end-line="9" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/log/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
+=======
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/single/detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3">
-          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/single/modify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71794873">
-          <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/LogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/impl/LogServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/LogRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/LogRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="143" selection-start-line="39" selection-start-column="143" selection-end-line="39" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/error/importError.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/common/excel/output/mapper/LogMessageExcelMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/common/excel/into/StuGraduateInfoExcelMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="64" selection-start-line="64" selection-start-column="64" selection-end-line="64" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/LogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/common/DataConvUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <caret line="252" column="39" selection-start-line="252" selection-start-column="39" selection-end-line="252" selection-end-column="39" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2205129">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.3225256">
+          <caret line="9" column="106" selection-start-line="9" selection-start-column="106" selection-end-line="9" selection-end-column="106" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+=======
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="70" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+=======
+          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerStu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+=======
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+=======
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/model/StuGraduateInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE-sources.jar!/org/springframework/web/util/Log4jConfigListener.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerRes.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_31/src.zip!/java/util/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/authFalse.css">
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.42881647">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/javax/servlet/ServletContextListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/bootstrap/css/inquireFalse.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34146342">
-          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.2572899">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/include/header.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerStu.jsp">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.617647">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/StuGraduateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-10.033334">
           <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/LoginTimeRepositoryImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3598726">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/AdminRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/impl/StuGraduateServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+=======
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/AdminRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/StuGraduateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6136364">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/impl/AdminServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/model/StuGraduateInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6931818">
-          <caret line="96" column="41" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/service/AdminService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.6818182">
           <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
@@ -1458,18 +1554,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="-6.617647">
+          <caret line="9" column="2" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/headerRes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="51" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/include/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/single/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.593857">
@@ -1488,10 +1612,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="25" selection-start-line="78" selection-start-column="16" selection-end-line="120" selection-end-column="25" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/single/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1520,13 +1667,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/search.jsp">
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/model/StuGraduateInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1538,34 +1689,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21160409">
           <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/error/authentication.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="48" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/authentication.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="57" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/notFound.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.764706">
+          <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/root-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71573603">
           <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/servlet-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/stu/result/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.529411">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1588,98 +1767,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10243902">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team/graduate/repository/impl/StuGraduateRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+          <folding>
+            <marker date="1457370676485" expanded="true" signature="877:1032" placeholder="select stuNa..stu_graduate_info..." />
+            <marker date="1457370676485" expanded="true" signature="1320:1545" placeholder="select stuNa..stu_graduate_info..." />
+            <marker date="1457370676485" expanded="true" signature="1832:1932" placeholder="SELECT disti..stu_graduate_info..." />
+            <marker date="1457370676485" expanded="true" signature="2058:2118" placeholder="SELECT count..stu_graduate_info..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85763294">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+>>>>>>> 7a0ca96cfaa2a5f03e097dd164f0c58e3abdb401
           <folding />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>graduate:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring|graduate</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.1150748" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
