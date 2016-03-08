@@ -82,4 +82,4 @@
 
 </div>
 </div>
-<%@ include file="/WEB-INF/include/footerStu.jsp"%>
+<%@ include file="/WEB-INF/include/footer.jsp"%>

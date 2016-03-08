@@ -29,8 +29,8 @@
 						<th class="col-md-4">查询日期</th>
 					</tr>
 					<tr class="signBg">
-						<th class="col-md-4">${stuName}</th>
-						<th class="col-md-4">${stuNameIdNum }</th>
+						<th class="col-md-4">${stu.stuName }</th>
+						<th class="col-md-4">${stu.stuIdentificationNum }</th>
 						<th class="col-md-4">2016-03-10</th>
 					</tr>
 					<tr>
@@ -53,4 +53,4 @@
 
 </div>
 
-<%@ include file="/WEB-INF/include/footerStu.jsp"%>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
