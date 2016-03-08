@@ -1,0 +1,8 @@
+23:16:15.187 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] - Root WebApplicationContext: initialization started
+23:16:15.367 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:513] - Refreshing Root WebApplicationContext: startup date [Thu Jul 09 23:16:15 CST 2015]; root of context hierarchy
+23:16:15.452 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:316] - Loading XML bean definitions from class path resource [spring/root-context.xml]
+23:16:15.810 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] - Loading properties file from class path resource [db/db.properties]
+23:16:16.089 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] - Root WebApplicationContext: initialization completed in 888 ms
+23:16:16.150 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:479] - FrameworkServlet 'springServlet': initialization started
+23:16:16.155 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:513] - Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Thu Jul 09 23:16:16 CST 2015]; parent: Root WebApplicationContext
+23:16:16.156 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:316] - Loading XML bean definitions from class path resource [spring/servlet-context.xml]
