@@ -29,7 +29,12 @@
 					<tr class="signBg">
 						<th class="col-md-4">${stuName}</th>
 						<th class="col-md-4">${stuNameIdNum }</th>
-						<th class="col-md-4">2016-03-10</th>
+						<th class="col-md-3" id="selectDate"></th>
+						<script type="text/javascript">
+							var now = new Date();
+							var $date = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+							$('#selectDate').html($date);
+						</script>
 					</tr>
 					<tr>
 						<td></td>

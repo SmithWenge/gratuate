@@ -40,7 +40,7 @@
 <body>
 <!-- header -->
 <div id="header">
-  <img src="<%=basePath%>resource/bootstrap/img/banner-02.png" alt="大连交通大学" />
+  <img src="<%=basePath%>resource/img/banner-02.png" alt="大连交通大学" />
   <ul class="nav_right">
     <li><a href="#">学位办公室</a></li>
     <li><a href="#">教务处</a></li>
