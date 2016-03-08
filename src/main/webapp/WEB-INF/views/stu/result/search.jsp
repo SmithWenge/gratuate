@@ -44,17 +44,15 @@
 			<div>
 				<table class="table border">
 					<tr>
-						<th class="col-md-2">证书编号</th>
-						<th class="col-md-3">学位类别</th>
+						<th class="col-md-4">证书编号</th>
+						<th class="col-md-4">学位类别</th>
 						<th class="col-md-4">就读专业</th>
-						<th class="col-md-3">发证日期</th>
 					</tr>
 					<c:forEach items="${stus}" var="stu">
 						<tr>
-							<td class="col-md-2" id="stuGraduationCardNum">${stu.stuMajorDegreeCertNum}</td>
-							<td class="col-md-3" id="stuMajorDegree">${stu.stuMajorDegree}</td>
-							<td class="col-md-4" id="stuSpecialty">${stu.stuSpecialty}</td>
-							<td class="col-md-3" id="stuPublicationDate">${stu.stuPublicationDate}</td>
+							<th class="col-md-4" id="stuGraduationCardNum">${stu.stuMajorDegreeCertNum}</th>
+							<th class="col-md-4" id="stuMajorDegree">${stu.stuMajorDegree}</th>
+							<th class="col-md-4" id="stuSpecialty">${stu.stuSpecialty}</th>
 						</tr>
 					</c:forEach>
 					<tr>
