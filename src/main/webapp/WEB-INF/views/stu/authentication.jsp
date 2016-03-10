@@ -30,11 +30,11 @@
 				<div class="form-group lineHeight marginBottom">
 					<label for="stuMajorDegreeCertNum" class="col-sm-3 control-label" style="padding: 0; font-weight: 100;">学位证号</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="stuMajorDegreeCertNum" name="stuMajorDegreeCertNum">
+						<input type="text" class="form-control" id="stuMajorDegreeCertNum" name="stuMajorDegreeCertNum" placeholder="学位证号与待查证书上书写一致">
 					</div>
 				</div>
 				<div class="form-group lineHeight marginBottom">
-					<label for="date" class="col-sm-3 control-label" style="padding: 0;font-weight: 100;">发证日期</label>
+					<label for="stuPublicationDate" class="col-sm-3 control-label" style="padding: 0;font-weight: 100;">发证日期</label>
 					<div class="col-sm-8">
 						<select name="stuPublicationDate" id="stuPublicationDate" class="form-control" data-size="5" data-width="200px">
 							<c:forEach items="${dates}" var="date">

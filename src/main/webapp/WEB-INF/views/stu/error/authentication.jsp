@@ -32,7 +32,12 @@
                         <th class="col-md-3">${stu.stuName}</th>
                         <th class="col-md-3">${stu.stuMajorDegreeCertNum}</th>
                         <th class="col-md-3">${stu.stuPublicationDate}</th>
-                        <th class="col-md-3">2015-07-06</th>
+                        <th class="col-md-3" id="selectDate"></th>
+                        <script type="text/javascript">
+                            var now = new Date();
+                            var $date = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+                            $('#selectDate').html($date);
+                        </script>
                     </tr>
                     <tr>
                         <td></td>
